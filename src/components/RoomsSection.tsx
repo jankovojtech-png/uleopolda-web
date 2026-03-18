@@ -12,8 +12,12 @@ export function RoomsSection() {
             Pokoje
           </p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-            Vyberte si typ ubytování, který vám bude nejvíce vyhovovat.
+            Vyberte si pokoj nebo apartmán podle délky a stylu pobytu
           </h2>
+          <p className="mt-5 text-lg leading-8 text-stone-600">
+            Na detailu pokojů najdete přehled dispozic, vybavení a fotografie. Pokud si nejste
+            jistí, ozvěte se a doporučíme vhodnou variantu.
+          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">

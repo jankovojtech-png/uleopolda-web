@@ -2,13 +2,13 @@ import { LightboxImage } from "@/components/LightboxImage";
 
 const accommodationCards = [
   {
-    title: "Pokoje pro krátkodobé pobyty",
-    text: "Příjemné a čisté zázemí pro hosty, kteří hledají pohodlné ubytování v Brně na několik nocí.",
+    title: "Ubytování na několik nocí",
+    text: "Pokoje a apartmány pro hosty, kteří chtějí čisté, klidné a dobře dostupné zázemí v Brně.",
     image: "/images/3.jpg",
   },
   {
-    title: "Praktické řešení pro delší pobyt",
-    text: "Vhodné pro pracovní cesty, dlouhodobější pobyty i hosty, kteří ocení klid, soukromí a dobrou dostupnost.",
+    title: "Praktická volba pro pracovní a delší pobyt",
+    text: "Vhodné pro pracovní cesty, opakované pobyty i hosty, kteří ocení soukromí, Wi‑Fi a klidnou lokalitu.",
     image: "/images/26.jpg",
   },
 ];
@@ -23,8 +23,12 @@ export function AccommodationPreview() {
               Ubytování
             </p>
             <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-              Moderní a spolehlivé zázemí v Brně
+              Přehled ubytování pro hosty, kteří chtějí mít jasno
             </h2>
+            <p className="mt-5 text-lg leading-8 text-stone-600">
+              Nabízíme pokoje i apartmány pro jednotlivce, páry i hosty na pracovních cestách.
+              Vyberete si podle délky pobytu i potřebného komfortu.
+            </p>
           </div>
           <a
             href="https://booking.previo.app/?id=019d0173-7772-7164-b6da-ed6b8dc36337&lang=cs&cur=CZK"
@@ -32,7 +36,7 @@ export function AccommodationPreview() {
             rel="noopener noreferrer"
             className="text-sm font-semibold text-stone-700 transition duration-200 hover:text-stone-900"
           >
-            Zobrazit možnosti rezervace
+            Rezervovat pobyt
           </a>
         </div>
 
@@ -53,6 +57,12 @@ export function AccommodationPreview() {
               <div className="p-9 sm:p-10">
                 <h3 className="text-2xl font-semibold leading-8 text-stone-900">{card.title}</h3>
                 <p className="mt-5 text-[17px] leading-8 text-stone-600">{card.text}</p>
+                <a
+                  href="#pokoje"
+                  className="mt-6 inline-flex text-sm font-semibold text-stone-700 transition hover:text-stone-900"
+                >
+                  Prohlédnout pokoje
+                </a>
               </div>
             </article>
           ))}

@@ -13,6 +13,13 @@ const heroImages = [
   "/images/17.jpg",
 ];
 
+const quickPoints = [
+  "Klidná lokalita",
+  "Krátké i delší pobyty",
+  "Rodinný penzion",
+  "Snadná rezervace",
+];
+
 export function Hero() {
   const [activeImage, setActiveImage] = useState(0);
 
@@ -43,14 +50,30 @@ export function Hero() {
       <div className="relative mx-auto grid min-h-[86vh] max-w-6xl items-center gap-14 px-6 py-24 sm:py-28 lg:grid-cols-[1.02fr_0.98fr] lg:py-32">
         <div className="max-w-3xl">
           <p className="mb-6 text-sm font-medium uppercase tracking-[0.32em] text-stone-500">
-            Penzion U Leopolda - Brno-Komárov
+            Penzion U Leopolda • Brno-Komárov
           </p>
-          <h1 className="max-w-3xl text-5xl font-semibold leading-[1.05] tracking-[-0.03em] text-stone-900 sm:text-6xl lg:text-7xl">
-            Klidné ubytování v rodinném penzionu v Brně
+          <h1 className="max-w-3xl text-5xl font-semibold leading-[1.05] tracking-[-0.03em] text-stone-900 sm:text-6xl lg:text-6xl">
+            Klidné ubytování v Brně
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-8 text-stone-600 sm:text-xl sm:leading-9">
-            Klidné a pohodlné ubytování v rodinném penzionu s tradicí již třetí generace.
+            Moderní a čisté pokoje v Brně-Komárově.
+            <br />
+            Ideální pro krátké přespání i pracovní pobyty.
           </p>
+          <p className="mt-4 text-base font-medium text-stone-700 sm:text-lg">
+            Rezervace online během pár kliknutí.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3 text-sm text-stone-700">
+            {quickPoints.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-stone-300/80 bg-white/55 px-4 py-2 backdrop-blur-sm"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
 
           <div className="mt-12 flex flex-col gap-4 sm:flex-row">
             <a
@@ -62,10 +85,10 @@ export function Hero() {
               Rezervovat pobyt
             </a>
             <a
-              href="#firmy"
+              href="#kontakt"
               className="rounded-full border border-stone-300/80 bg-white/40 px-8 py-4 text-center text-sm font-semibold text-stone-700 backdrop-blur-sm transition duration-200 hover:border-stone-400 hover:bg-white/70 hover:text-stone-900"
             >
-              Firemní ubytování
+              Kontakt
             </a>
           </div>
         </div>
@@ -77,9 +100,42 @@ export function Hero() {
               alt="Světlý pokoj v penzionu U Leopolda"
               width={1152}
               height={768}
-              className="h-[500px] w-full rounded-[1.5rem] object-cover"
+              className="h-[320px] w-full rounded-[1.5rem] object-cover"
               wrapperClassName="block w-full overflow-hidden rounded-[1.5rem] text-left"
             />
+            <div className="grid gap-4 p-6">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-stone-500">
+                  Rychlý kontakt
+                </p>
+                <p className="mt-3 text-2xl font-semibold text-stone-900">Jednoduchá rezervace</p>
+                <p className="mt-3 text-[15px] leading-7 text-stone-600">
+                  Na běžný pobyt použijte online rezervaci. Pokud řešíte delší termín nebo firemní
+                  ubytování, ozvěte se přímo.
+                </p>
+              </div>
+
+              <div className="grid gap-3 text-sm text-stone-700">
+                <a
+                  href="tel:+420603734251"
+                  className="rounded-2xl bg-[#faf7f2] px-4 py-3 transition hover:bg-white"
+                >
+                  Zavolat: +420 603 734 251
+                </a>
+                <a
+                  href="mailto:penzion@uleopolda.cz"
+                  className="rounded-2xl bg-[#faf7f2] px-4 py-3 transition hover:bg-white"
+                >
+                  Napsat: penzion@uleopolda.cz
+                </a>
+                <a
+                  href="#kontakt"
+                  className="rounded-2xl bg-[#faf7f2] px-4 py-3 transition hover:bg-white"
+                >
+                  Kontaktní údaje a mapa
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

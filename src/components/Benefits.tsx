@@ -1,19 +1,19 @@
 const benefits = [
   {
-    title: "Klidné prostředí",
-    description: "Ideální pro odpočinek po práci, cestování i náročném dni v Brně.",
+    title: "Pro pracovní pobyty",
+    description: "Vhodné pro služební cesty i opakované pobyty v Brně.",
   },
   {
-    title: "Rodinný přístup",
-    description: "Osobní péče a tradice rodinného penzionu, kde na hostech opravdu záleží.",
+    title: "Klidná lokalita",
+    description: "Penzion se nachází v Brně-Komárově mimo rušné centrum.",
   },
   {
-    title: "Snídaně v zimní zahradě",
-    description: "Příjemný začátek dne v klidné atmosféře se světlem a pohodou.",
+    title: "Soukromí a pohodlí",
+    description: "Pokoje s vlastním zázemím pro nerušený pobyt.",
   },
   {
-    title: "Výborná dostupnost",
-    description: "Rychlé spojení do centra Brna i do průmyslových zón v okolí.",
+    title: "Jednoduchá rezervace",
+    description: "Termín si rezervujete online nebo se domluvíte přímo.",
   },
 ];
 
@@ -23,11 +23,16 @@ export function Benefits() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-14 max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-stone-500">
-            Hlavní výhody
+            Pro koho je penzion vhodný
           </p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-            Místo, kde se dobře bydlí i odpočívá
+            Ubytování, které oceníte při pobytu v Brně
           </h2>
+          <p className="mt-5 text-lg leading-8 text-stone-600">
+            Klidná lokalita, čisté pokoje a jednoduchá rezervace.
+            <br />
+            Ideální pro pracovní pobyty, krátké přespání i delší ubytování.
+          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">

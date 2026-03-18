@@ -48,8 +48,11 @@ export function GalleryPreview() {
             Galerie
           </p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-            Náhled interiéru a zázemí penzionu
+            Nahlédněte do pokojů a zázemí penzionu
           </h2>
+          <p className="mt-5 text-lg leading-8 text-stone-600">
+            Krátký výběr fotografií ukazuje atmosféru pokojů, koupelen i společných prostor.
+          </p>
         </div>
 
         <ImageLightboxGallery

@@ -47,13 +47,14 @@ export function ContactSection() {
               Kontakt
             </p>
             <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-              Domluvte si pobyt nebo firemní nabídku
+              Rezervace a dotazy na jednom místě
             </h2>
             <p className="mt-6 text-lg leading-8 text-stone-600">
-              Ozvěte se nám a společně najdeme vhodný termín i typ ubytování.
+              Pro běžný pobyt použijte online rezervaci. Pokud řešíte delší termín, firemní
+              ubytování nebo se chcete na něco doptat, kontaktujte nás přímo.
             </p>
             <p className="mt-4 text-base leading-7 text-stone-600">
-              Možnost menších soukromých akcí po domluvě.
+              Menší soukromé akce jsou možné po předchozí domluvě.
             </p>
           </div>
 
@@ -102,7 +103,8 @@ export function ContactSection() {
             >
               <h3 className="text-xl font-semibold">Rezervace</h3>
               <p className="mt-5 text-[17px] leading-8 text-stone-300">
-                Rezervace probíhá přes systém Previo. Prozatím použijte připravený odkaz níže.
+                Nejrychlejší cesta k volnému termínu je online rezervace. Pro delší nebo firemní
+                pobyty doporučujeme kontakt přímo.
               </p>
               <a
                 href="https://booking.previo.app/?id=019d0173-7772-7164-b6da-ed6b8dc36337&lang=cs&cur=CZK"
@@ -110,7 +112,7 @@ export function ContactSection() {
                 rel="noopener noreferrer"
                 className="mt-10 inline-flex rounded-full bg-[#d8bb8d] px-7 py-3.5 text-sm font-semibold text-stone-950 shadow-[0_12px_28px_rgba(154,124,73,0.18)] transition duration-200 hover:bg-[#e0c496]"
               >
-                Přejít na rezervaci
+                Rezervovat pobyt
               </a>
             </div>
           </div>

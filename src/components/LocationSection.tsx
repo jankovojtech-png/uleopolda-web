@@ -9,19 +9,29 @@ export function LocationSection() {
             Lokalita
           </p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-            Klidná část Brna s výbornou dostupností
+            Brno-Komárov: klidná lokalita s dobrou dostupností
           </h2>
           <p className="mt-6 text-lg leading-8 text-stone-600">
-            Penzion se nachází v Brně-Komárově, v klidné části města s velmi dobrou dostupností do
-            centra, průmyslových areálů i na hlavní dopravní tahy. Vhodná poloha pro služební cesty
-            i pobyty jednotlivců.
+            Penzion najdete v Brně-Komárově. Poloha je vhodná pro hosty, kteří potřebují klidné
+            přespání a zároveň chtějí být rychle v centru města nebo na cestě za prací.
           </p>
+          <div className="mt-8 space-y-3 text-[15px] leading-7 text-stone-600">
+            <p>Dobré spojení do centra Brna i na hlavní dopravní tahy.</p>
+            <p>Praktická volba pro služební pobyty, jednotlivce i páry.</p>
+            <p>Klidnější okolí než v rušných částech města.</p>
+          </div>
+          <a
+            href="#kontakt"
+            className="mt-10 inline-flex rounded-full bg-stone-900 px-8 py-4 text-sm font-semibold text-white shadow-[0_12px_32px_rgba(41,37,36,0.12)] transition duration-200 hover:bg-stone-800"
+          >
+            Kontakt
+          </a>
         </div>
 
         <div className="overflow-hidden rounded-[2rem] bg-[#f7f2eb] shadow-[0_18px_44px_rgba(28,25,23,0.06)] ring-1 ring-stone-200/70">
           <LightboxImage
             src="/images/27.jpg"
-            alt="Klidná část Brna s výbornou dostupností"
+            alt="Klidná část Brna s dobrou dostupností"
             width={1152}
             height={768}
             className="h-[460px] w-full object-cover"

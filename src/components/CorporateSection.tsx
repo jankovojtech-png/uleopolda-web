@@ -9,17 +9,17 @@ export function CorporateSection() {
             Firemní klientela
           </p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-            Ubytování pro firmy
+            Ubytování pro firmy a pracovní pobyty
           </h2>
           <p className="mt-6 text-lg leading-8 text-stone-600">
-            Pro firmy nabízíme spolehlivé zázemí pro kratší i delší pobyty. Hosté ocení pohodlí,
-            klid a praktickou polohu s dobrou dostupností do centra i pracovních areálů.
+            Pro firmy nabízíme ubytování i na delší období. Pokud řešíte více pokojů, opakované
+            pobyty nebo dlouhodobou spolupráci, domluvíme se individuálně podle počtu osob a termínu.
           </p>
           <a
             href="#kontakt"
-            className="mt-10 inline-flex rounded-full bg-stone-900 px-8 py-4 text-sm font-semibold text-white shadow-[0_12px_32px_rgba(41,37,36,0.12)] transition duration-200 hover:bg-stone-800"
+            className="mt-10 inline-flex rounded-full border border-stone-300/80 bg-white/70 px-8 py-4 text-sm font-semibold text-stone-800 transition duration-200 hover:border-stone-400 hover:bg-white"
           >
-            Nezávazně poptat
+            Kontakt
           </a>
         </div>
 

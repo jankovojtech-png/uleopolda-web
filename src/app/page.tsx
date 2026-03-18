@@ -7,21 +7,29 @@ import { GalleryPreview } from "@/components/GalleryPreview";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { LocationSection } from "@/components/LocationSection";
+import { MobileStickyCta } from "@/components/MobileStickyCta";
+import { ReservationStepsSection } from "@/components/ReservationStepsSection";
 import { RoomsSection } from "@/components/RoomsSection";
+import { TrustSection } from "@/components/TrustSection";
+import { TrustStrip } from "@/components/TrustStrip";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f6f1ea] text-stone-900">
+    <main className="min-h-screen bg-[#f6f1ea] pb-24 text-stone-900 md:pb-0">
       <Header />
       <Hero />
       <Benefits />
       <AccommodationPreview />
-      <CorporateSection />
-      <GalleryPreview />
-      <LocationSection />
       <RoomsSection />
+      <GalleryPreview />
+      <TrustSection />
+      <TrustStrip />
+      <LocationSection />
+      <CorporateSection />
+      <ReservationStepsSection />
       <ContactSection />
       <Footer />
+      <MobileStickyCta />
     </main>
   );
 }
