@@ -43,6 +43,7 @@ export function RoomsSection() {
                 className="block p-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400/70"
               >
                 <h3 className="text-xl font-semibold leading-8 text-stone-900">{room.title}</h3>
+                <p className="mt-2 text-sm font-semibold text-stone-700">od 1 490 Kč / noc</p>
                 <p className="mt-3 text-[15px] leading-7 text-stone-600">{room.shortDescription}</p>
               </Link>
             </div>

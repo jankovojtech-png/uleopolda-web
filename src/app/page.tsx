@@ -9,6 +9,7 @@ import { Hero } from "@/components/Hero";
 import { LocationSection } from "@/components/LocationSection";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
 import { ReservationStepsSection } from "@/components/ReservationStepsSection";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { RoomsSection } from "@/components/RoomsSection";
 import { TrustSection } from "@/components/TrustSection";
 import { TrustStrip } from "@/components/TrustStrip";
@@ -19,6 +20,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Benefits />
+      <ReviewsSection />
       <AccommodationPreview />
       <RoomsSection />
       <GalleryPreview />

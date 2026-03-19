@@ -13,11 +13,11 @@ const heroImages = [
   "/images/17.jpg",
 ];
 
-const quickPoints = [
+const trustPoints = [
+  "Parkování zdarma",
+  "Wi-Fi zdarma",
+  "Vlastní koupelna",
   "Klidná lokalita",
-  "Krátké i delší pobyty",
-  "Rodinný penzion",
-  "Snadná rezervace",
 ];
 
 export function Hero() {
@@ -53,27 +53,15 @@ export function Hero() {
             Penzion U Leopolda • Brno-Komárov
           </p>
           <h1 className="max-w-3xl text-5xl font-semibold leading-[1.05] tracking-[-0.03em] text-stone-900 sm:text-6xl lg:text-6xl">
-            Klidné ubytování v Brně
+            Klidné ubytování v Brně s parkováním a rychlou dostupností do centra
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-8 text-stone-600 sm:text-xl sm:leading-9">
-            Moderní a čisté pokoje v Brně-Komárově.
-            <br />
-            Ideální pro krátké přespání i pracovní pobyty.
+            Ideální pro pracovní cesty i krátké pobyty. Čisté pokoje, jednoduchá rezervace a
+            férové ceny.
           </p>
           <p className="mt-4 text-base font-medium text-stone-700 sm:text-lg">
-            Rezervace online během pár kliknutí.
+            Ceny od 1 490 Kč / noc
           </p>
-
-          <div className="mt-8 flex flex-wrap gap-3 text-sm text-stone-700">
-            {quickPoints.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-stone-300/80 bg-white/55 px-4 py-2 backdrop-blur-sm"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
 
           <div className="mt-12 flex flex-col gap-4 sm:flex-row">
             <a
@@ -90,6 +78,17 @@ export function Hero() {
             >
               Kontakt
             </a>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3 text-sm text-stone-700">
+            {trustPoints.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-stone-300/80 bg-white/55 px-4 py-2 backdrop-blur-sm"
+              >
+                {item}
+              </span>
+            ))}
           </div>
         </div>
 
@@ -108,10 +107,12 @@ export function Hero() {
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-stone-500">
                   Rychlý kontakt
                 </p>
-                <p className="mt-3 text-2xl font-semibold text-stone-900">Jednoduchá rezervace</p>
+                <p className="mt-3 text-2xl font-semibold text-stone-900">
+                  Rezervace bez zbytečného čekání
+                </p>
                 <p className="mt-3 text-[15px] leading-7 text-stone-600">
-                  Na běžný pobyt použijte online rezervaci. Pokud řešíte delší termín nebo firemní
-                  ubytování, ozvěte se přímo.
+                  Pro běžný pobyt využijte online rezervaci. Pro delší termín, více pokojů nebo
+                  firemní ubytování nás kontaktujte přímo.
                 </p>
               </div>
 

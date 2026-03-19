@@ -1,5 +1,12 @@
 import { LightboxImage } from "@/components/LightboxImage";
 
+const corporateBenefits = [
+  "dlouhodobé pobyty",
+  "fakturace",
+  "více pokojů najednou",
+  "výhodné ceny při delším pobytu",
+];
+
 export function CorporateSection() {
   return (
     <section id="firmy" className="bg-[#ebe3d8] py-24 sm:py-32">
@@ -11,10 +18,14 @@ export function CorporateSection() {
           <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
             Ubytování pro firmy a pracovní pobyty
           </h2>
-          <p className="mt-6 text-lg leading-8 text-stone-600">
-            Pro firmy nabízíme ubytování i na delší období. Pokud řešíte více pokojů, opakované
-            pobyty nebo dlouhodobou spolupráci, domluvíme se individuálně podle počtu osob a termínu.
-          </p>
+          <ul className="mt-6 space-y-3 text-lg leading-8 text-stone-600">
+            {corporateBenefits.map((benefit) => (
+              <li key={benefit} className="flex items-start gap-3">
+                <span className="mt-3 h-1.5 w-1.5 rounded-full bg-stone-500" />
+                <span>{benefit}</span>
+              </li>
+            ))}
+          </ul>
           <a
             href="#kontakt"
             className="mt-10 inline-flex rounded-full border border-stone-300/80 bg-white/70 px-8 py-4 text-sm font-semibold text-stone-800 transition duration-200 hover:border-stone-400 hover:bg-white"
