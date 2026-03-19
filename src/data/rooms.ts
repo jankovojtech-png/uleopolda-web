@@ -4,6 +4,8 @@ export type Room = {
   shortDescription: string;
   description: string;
   capacity: string;
+  capacityNote: string;
+  priceFrom: string;
   features: string[];
   coverImage: string;
   gallery: string[];
@@ -18,9 +20,11 @@ export const rooms: Room[] = [
     description:
       "Malý apartmán nabízí útulné a klidné zázemí pro hosty, kteří hledají soukromí a pohodlí. Hodí se pro kratší i delší pobyt a díky vlastnímu zázemí působí velmi prakticky a příjemně.",
     capacity: "1-3 osoby",
+    capacityNote: "až pro 3 osoby",
+    priceFrom: "od 1590 Kč / noc",
     features: [
       "vlastní koupelna",
-      "Wi‑Fi zdarma",
+      "Wi-Fi zdarma",
       "TV",
       "klimatizace",
       "snídaně za příplatek",
@@ -37,9 +41,11 @@ export const rooms: Room[] = [
     description:
       "Velký apartmán je vhodný pro hosty, kteří chtějí více prostoru a pohodlí při delším pobytu. Ocení jej pracovní skupiny, páry i hosté, kteří mají rádi vzdušné a prakticky řešené ubytování.",
     capacity: "1-4 osoby",
+    capacityNote: "až pro 4 osoby",
+    priceFrom: "od 1740 Kč / noc",
     features: [
       "vlastní koupelna",
-      "Wi‑Fi zdarma",
+      "Wi-Fi zdarma",
       "TV",
       "klimatizace",
       "snídaně za příplatek",
@@ -56,9 +62,11 @@ export const rooms: Room[] = [
     description:
       "Dvoulůžkový pokoj je jednoduchou a pohodlnou volbou pro páry i hosty na pracovních cestách. Nabízí vše potřebné pro příjemný pobyt v klidném prostředí rodinného penzionu.",
     capacity: "1-2 osoby",
+    capacityNote: "až pro 3 osoby",
+    priceFrom: "od 1490 Kč / noc",
     features: [
       "vlastní koupelna",
-      "Wi‑Fi zdarma",
+      "Wi-Fi zdarma",
       "TV",
       "klimatizace",
       "snídaně za příplatek",
@@ -74,9 +82,11 @@ export const rooms: Room[] = [
     description:
       "Jednolůžkový pokoj je ideální pro jednotlivce, kteří chtějí čisté, klidné a praktické ubytování. Hodí se pro pracovní pobyty i kratší zastavení v Brně.",
     capacity: "1 osoba",
+    capacityNote: "pro 1 osobu",
+    priceFrom: "od 1440 Kč / noc",
     features: [
       "vlastní koupelna",
-      "Wi‑Fi zdarma",
+      "Wi-Fi zdarma",
       "TV",
       "klimatizace",
       "snídaně za příplatek",

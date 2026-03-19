@@ -24,14 +24,14 @@ export function RoomsSection() {
           {rooms.map((room) => (
             <div
               key={room.title}
-              className="overflow-hidden rounded-2xl bg-[#faf7f2] shadow-[0_14px_36px_rgba(28,25,23,0.05)] ring-1 ring-stone-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(28,25,23,0.08)]"
+              className="overflow-hidden rounded-2xl bg-[#fcfaf6] shadow-[0_10px_28px_rgba(28,25,23,0.045)] ring-1 ring-stone-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(28,25,23,0.07)]"
             >
               <LightboxImage
                 src={room.coverImage}
                 alt={room.title}
                 width={1152}
                 height={768}
-                className="h-64 w-full object-cover"
+                className="h-64 w-full object-cover object-center"
                 wrapperClassName="block w-full text-left"
                 gallery={room.gallery.map((image) => ({
                   src: image,
@@ -43,12 +43,17 @@ export function RoomsSection() {
                 className="block p-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400/70"
               >
                 <h3 className="text-xl font-semibold leading-8 text-stone-900">{room.title}</h3>
-                <p className="mt-2 text-sm font-semibold text-stone-700">od 1 490 Kč / noc</p>
-                <p className="mt-3 text-[15px] leading-7 text-stone-600">{room.shortDescription}</p>
+                <p className="mt-3 text-lg font-semibold text-stone-900">{room.priceFrom}</p>
+                <p className="mt-1 text-sm text-stone-500">{room.capacityNote}</p>
+                <p className="mt-4 text-[15px] leading-7 text-stone-600">{room.shortDescription}</p>
               </Link>
             </div>
           ))}
         </div>
+
+        <p className="mt-6 text-sm text-stone-500">
+          Kapacita se může lišit dle konkrétního pokoje.
+        </p>
       </div>
     </section>
   );

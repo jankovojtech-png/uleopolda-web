@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function RoomsPage() {
   return (
-    <main className="min-h-screen bg-[#f6f1ea] text-stone-900">
+    <main className="min-h-screen bg-[#f7f2ea] text-stone-900">
       <Header />
 
       <section className="py-24 sm:py-32">
@@ -37,8 +37,8 @@ export default function RoomsPage() {
             <article
               key={room.title}
               id={room.slug}
-              className={`scroll-mt-28 rounded-[2rem] px-6 py-8 shadow-[0_18px_44px_rgba(28,25,23,0.05)] ring-1 ring-stone-200/70 lg:px-8 lg:py-10 ${
-                index % 2 === 0 ? "bg-[#faf7f2]" : "bg-[#f3ede4]"
+              className={`scroll-mt-28 rounded-[2rem] px-6 py-8 shadow-[0_14px_34px_rgba(28,25,23,0.045)] ring-1 ring-stone-200/70 lg:px-8 lg:py-10 ${
+                index % 2 === 0 ? "bg-[#fcfaf6]" : "bg-[#f5eee4]"
               }`}
             >
               <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
@@ -49,6 +49,8 @@ export default function RoomsPage() {
                   <h2 className="mt-3 text-3xl font-semibold leading-tight text-stone-900 sm:text-4xl">
                     {room.title}
                   </h2>
+                  <p className="mt-4 text-2xl font-semibold text-stone-900">{room.priceFrom}</p>
+                  <p className="mt-1 text-sm text-stone-500">{room.capacityNote}</p>
                   <p className="mt-5 max-w-2xl text-[17px] leading-8 text-stone-600">
                     {room.description}
                   </p>
@@ -66,7 +68,7 @@ export default function RoomsPage() {
                     href="https://booking.previo.app/?id=019d0173-7772-7164-b6da-ed6b8dc36337&lang=cs&cur=CZK"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-8 inline-flex rounded-full bg-stone-900 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(41,37,36,0.12)] transition duration-200 hover:bg-stone-800"
+                    className="mt-8 inline-flex rounded-full bg-stone-900 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_10px_22px_rgba(41,37,36,0.12)] transition duration-200 hover:bg-stone-800"
                   >
                     Rezervovat pobyt
                   </a>
@@ -78,12 +80,14 @@ export default function RoomsPage() {
                     alt: `${room.title} - fotografie`,
                   }))}
                   gridClassName="grid gap-4 sm:grid-cols-2"
-                  itemClassName="overflow-hidden rounded-[1.5rem] bg-white/70 ring-1 ring-stone-200/70 transition duration-200 hover:shadow-[0_12px_28px_rgba(28,25,23,0.08)]"
+                  itemClassName="overflow-hidden rounded-[1.5rem] bg-white/80 ring-1 ring-stone-200/70 transition duration-200 hover:shadow-[0_10px_24px_rgba(28,25,23,0.07)]"
                   imageClassName="h-64 w-full object-cover transition duration-300 hover:scale-[1.02]"
                 />
               </div>
             </article>
           ))}
+
+          <p className="text-sm text-stone-500">Kapacita se může lišit dle konkrétního pokoje.</p>
         </div>
       </section>
 

@@ -3,31 +3,30 @@ import { LightboxImage } from "@/components/LightboxImage";
 const accommodationCards = [
   {
     title: "Ubytování na několik nocí",
-    text: "Pokoje a apartmány pro hosty, kteří chtějí čisté, klidné a dobře dostupné zázemí v Brně.",
+    text: "Čisté pokoje a apartmány pro krátké pobyty i přespání v Brně.",
     image: "/images/3.jpg",
   },
   {
-    title: "Praktická volba pro pracovní a delší pobyt",
-    text: "Vhodné pro pracovní cesty, opakované pobyty i hosty, kteří ocení soukromí, Wi‑Fi a klidnou lokalitu.",
+    title: "Praktická volba pro pracovní pobyt",
+    text: "Klidné zázemí, Wi-Fi a snadná dostupnost pro pracovní cesty i delší pobyty.",
     image: "/images/26.jpg",
   },
 ];
 
 export function AccommodationPreview() {
   return (
-    <section id="ubytovani" className="py-24 sm:py-32">
+    <section id="ubytovani" className="py-20 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mb-10 flex flex-col gap-4 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-stone-500">
               Ubytování
             </p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-              Přehled ubytování pro hosty, kteří chtějí mít jasno
+            <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:mt-4 sm:text-5xl">
+              Přehled ubytování bez zbytečně dlouhého rozhodování
             </h2>
-            <p className="mt-5 text-lg leading-8 text-stone-600">
-              Nabízíme pokoje i apartmány pro jednotlivce, páry i hosty na pracovních cestách.
-              Vyberete si podle délky pobytu i potřebného komfortu.
+            <p className="mt-4 max-w-2xl text-base leading-7 text-stone-600 sm:mt-5 sm:text-lg sm:leading-8">
+              Vyberete si rychle podle délky pobytu a typu pokoje.
             </p>
           </div>
           <a
@@ -40,26 +39,30 @@ export function AccommodationPreview() {
           </a>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2 lg:gap-8">
           {accommodationCards.map((card) => (
             <article
               key={card.title}
-              className="overflow-hidden rounded-[1.75rem] bg-[#fbf8f4] shadow-[0_18px_40px_rgba(28,25,23,0.06)] ring-1 ring-stone-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(28,25,23,0.08)]"
+              className="overflow-hidden rounded-[1.75rem] bg-[#fdfaf6] shadow-[0_10px_24px_rgba(28,25,23,0.04)] ring-1 ring-stone-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(28,25,23,0.06)]"
             >
               <LightboxImage
                 src={card.image}
                 alt={card.title}
                 width={1152}
                 height={768}
-                className="h-80 w-full object-cover"
+                className="h-64 w-full object-cover object-center sm:h-80"
                 wrapperClassName="block w-full text-left"
               />
-              <div className="p-9 sm:p-10">
-                <h3 className="text-2xl font-semibold leading-8 text-stone-900">{card.title}</h3>
-                <p className="mt-5 text-[17px] leading-8 text-stone-600">{card.text}</p>
+              <div className="p-6 sm:p-8">
+                <h3 className="text-xl font-semibold leading-7 text-stone-900 sm:text-2xl sm:leading-8">
+                  {card.title}
+                </h3>
+                <p className="mt-3 text-[15px] leading-7 text-stone-700 sm:mt-4 sm:text-[17px] sm:leading-8">
+                  {card.text}
+                </p>
                 <a
                   href="#pokoje"
-                  className="mt-6 inline-flex text-sm font-semibold text-stone-700 transition hover:text-stone-900"
+                  className="mt-5 inline-flex text-sm font-semibold text-stone-700 transition hover:text-stone-900"
                 >
                   Prohlédnout pokoje
                 </a>

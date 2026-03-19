@@ -24,6 +24,25 @@ const PLACE_QUERY = "Penzion U Leopolda Brno Komarov";
 
 let cache: CachedReviews | null = null;
 
+function repairEncoding(value: string) {
+  if (!/[ĂÅÄâĹÂ]/.test(value)) {
+    return value;
+  }
+
+  try {
+    return Buffer.from(value, "latin1").toString("utf8");
+  } catch {
+    return value;
+  }
+}
+
+function selectTrustedReviews<T extends { rating?: number }>(reviews: T[]) {
+  const highRatedReviews = reviews.filter((review) => (review.rating ?? 0) >= 4);
+  const source = highRatedReviews.length >= 3 ? highRatedReviews : reviews;
+
+  return source.slice(0, 6);
+}
+
 async function fetchPlaceId(apiKey: string) {
   const url = new URL("https://maps.googleapis.com/maps/api/place/findplacefromtext/json");
   url.searchParams.set("input", PLACE_QUERY);
@@ -79,14 +98,13 @@ async function fetchPlaceDetails(apiKey: string, placeId: string) {
 }
 
 function normalizeReviews(reviews: GoogleReview[] = []) {
-  return reviews
-    .filter((review) => review.text && review.author_name)
-    .slice(0, 6)
-    .map((review) => ({
-      author: review.author_name ?? "Google host",
-      rating: review.rating ?? 0,
-      text: review.text ?? "",
-    }));
+  return selectTrustedReviews(
+    reviews.filter((review) => review.text && review.author_name),
+  ).map((review) => ({
+    author: repairEncoding(review.author_name ?? "Google host"),
+    rating: review.rating ?? 0,
+    text: repairEncoding(review.text ?? ""),
+  }));
 }
 
 export async function GET() {
