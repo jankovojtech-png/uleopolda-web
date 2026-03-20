@@ -13,7 +13,12 @@ const heroImages = [
   "/images/17.jpg",
 ];
 
-const trustPoints = ["Parkování zdarma", "Wi-Fi zdarma", "Vlastní koupelna", "Klidná lokalita"];
+const trustPoints = [
+  "Parkování zdarma",
+  "Wi-Fi zdarma",
+  "Vlastní koupelna",
+  "Dobrá dostupnost do centra",
+];
 
 export function Hero() {
   const [activeImage, setActiveImage] = useState(0);
@@ -51,7 +56,8 @@ export function Hero() {
             Klidné ubytování v Brně
           </h1>
           <p className="mt-4 max-w-xl text-[15px] leading-6 text-stone-700 sm:mt-6 sm:text-lg sm:leading-8">
-            Čisté pokoje a apartmány pro krátké pobyty, pracovní cesty i delší ubytování.
+            Čisté pokoje a apartmány s vlastní koupelnou, Wi-Fi a parkováním v klidné části Brna s
+            dobrou dostupností do centra.
           </p>
           <p className="mt-4 text-base font-medium text-stone-800 sm:text-lg">Ceny od 1440 Kč / noc</p>
 
@@ -103,8 +109,8 @@ export function Hero() {
                   Rezervace online i přímý kontakt
                 </p>
                 <p className="mt-3 text-[15px] leading-7 text-stone-600">
-                  Rezervaci pobytu vyřídíte online během pár kliknutí. Pokud si nejste jistí výběrem
-                  pokoje nebo chcete poradit, ozvěte se nám.
+                  Rezervaci vyřídíte online během pár kliknutí. Vyberte si termín a máte hotovo.
+                  Pokud si nebudete jistí výběrem pokoje, rádi poradíme.
                 </p>
               </div>
 
