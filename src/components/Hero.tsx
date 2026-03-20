@@ -65,10 +65,10 @@ export function Hero() {
               Rezervovat pobyt
             </a>
             <a
-              href="#kontakt"
+              href="tel:+420603734251"
               className="rounded-full border border-stone-300/80 bg-white/86 px-8 py-4 text-center text-sm font-semibold text-stone-800 transition duration-200 hover:border-stone-400 hover:bg-white hover:text-stone-900"
             >
-              Kontakt
+              Zavolat
             </a>
           </div>
 
@@ -99,10 +99,12 @@ export function Hero() {
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-stone-500">
                   Online rezervace a kontakt
                 </p>
-                <p className="mt-3 text-2xl font-semibold text-stone-900">Rezervace online i přímý kontakt</p>
+                <p className="mt-3 text-2xl font-semibold text-stone-900">
+                  Rezervace online i přímý kontakt
+                </p>
                 <p className="mt-3 text-[15px] leading-7 text-stone-600">
-                  Rezervaci pobytu vyřídíte online během pár kliknutí. Pokud řešíte delší termín,
-                  více pokojů nebo firemní ubytování, ozvěte se nám přímo.
+                  Rezervaci pobytu vyřídíte online během pár kliknutí. Pokud si nejste jistí výběrem
+                  pokoje nebo chcete poradit, ozvěte se nám.
                 </p>
               </div>
 

@@ -33,9 +33,12 @@ export function AccommodationPreview() {
             href="https://booking.previo.app/?id=019d0173-7772-7164-b6da-ed6b8dc36337&lang=cs&cur=CZK"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-stone-700 transition duration-200 hover:text-stone-900"
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-stone-800 underline decoration-stone-300 underline-offset-4 transition duration-200 hover:text-stone-900 hover:decoration-stone-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400/60 focus-visible:ring-offset-4"
           >
             Rezervovat pobyt
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
+              →
+            </span>
           </a>
         </div>
 

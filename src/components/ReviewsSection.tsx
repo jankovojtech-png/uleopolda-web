@@ -137,7 +137,7 @@ function renderStars(rating: number) {
 export function ReviewsSection() {
   const [data, setData] = useState<ReviewsResponse>(fallbackData);
   const [startIndex, setStartIndex] = useState(0);
-  const shouldRotate = data.reviews.length > 3;
+  const shouldRotate = data.total >= 23 && data.reviews.length > 3;
 
   useEffect(() => {
     let isMounted = true;
@@ -239,7 +239,7 @@ export function ReviewsSection() {
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {visibleReviews.map((review, index) => (
             <blockquote
-              key={`${review.author}-${index}-${review.text.slice(0, 24)}`}
+              key={`${startIndex}-${review.author}-${index}-${review.text.slice(0, 24)}`}
               className="rounded-[1.5rem] bg-[#faf7f2] px-6 py-5 text-[15px] leading-7 text-stone-700 shadow-[0_12px_30px_rgba(28,25,23,0.05)] ring-1 ring-stone-200/70"
             >
               <p>{trimReviewText(review.text)}</p>
