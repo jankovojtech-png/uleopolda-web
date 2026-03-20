@@ -12,11 +12,11 @@ export function RoomsSection() {
             Pokoje
           </p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-            Vyberte si pokoj nebo apartmán podle délky a stylu pobytu
+            Pokoje a apartmány podle vašich potřeb
           </h2>
           <p className="mt-5 text-lg leading-8 text-stone-600">
-            Na detailu pokojů najdete přehled dispozic, vybavení a fotografie. Pokud si nejste
-            jistí, ozvěte se a doporučíme vhodnou variantu.
+            U každého typu najdete cenu, kapacitu, vybavení a fotografie. Pokud si nejste jistí,
+            ozvěte se a doporučíme vhodnou variantu.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ export function RoomsSection() {
         </div>
 
         <p className="mt-6 text-sm text-stone-500">
-          Kapacita se může lišit dle konkrétního pokoje.
+          Kapacita se může u konkrétního pokoje mírně lišit.
         </p>
       </div>
     </section>

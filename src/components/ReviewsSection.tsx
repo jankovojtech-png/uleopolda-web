@@ -34,12 +34,12 @@ const fallbackData: ReviewsResponse = {
     {
       author: "Jana",
       rating: 5,
-      text: "Bezproblémová domluva před příjezdem a rychlé odbavení.",
+      text: "Domluva před příjezdem byla rychlá a bez problémů.",
     },
     {
       author: "Tomáš",
       rating: 5,
-      text: "Skvělá volba na pracovní cestu, oceňuji klid a dobré parkování.",
+      text: "Dobrá volba na pracovní cestu, oceňuji klid a parkování.",
     },
     {
       author: "Lucie",
@@ -55,7 +55,7 @@ const fallbackData: ReviewsResponse = {
 };
 
 function repairEncoding(value: string) {
-  if (!/[ĂÅÄâĹÂ]/.test(value)) {
+  if (!/[Ä‚Ă…Ă„Ă˘ÄąĂ‚]/.test(value)) {
     return value;
   }
 

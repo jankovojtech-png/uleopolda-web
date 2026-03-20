@@ -13,12 +13,7 @@ const heroImages = [
   "/images/17.jpg",
 ];
 
-const trustPoints = [
-  "Parkování zdarma",
-  "Wi-Fi zdarma",
-  "Vlastní koupelna",
-  "Klidná lokalita",
-];
+const trustPoints = ["Parkování zdarma", "Wi-Fi zdarma", "Vlastní koupelna", "Klidná lokalita"];
 
 export function Hero() {
   const [activeImage, setActiveImage] = useState(0);
@@ -56,7 +51,7 @@ export function Hero() {
             Klidné ubytování v Brně
           </h1>
           <p className="mt-4 max-w-xl text-[15px] leading-6 text-stone-700 sm:mt-6 sm:text-lg sm:leading-8">
-            Moderní a čisté pokoje v Brně-Komárově. Ideální pro krátké i pracovní pobyty.
+            Čisté pokoje a apartmány pro krátké pobyty, pracovní cesty i delší ubytování.
           </p>
           <p className="mt-4 text-base font-medium text-stone-800 sm:text-lg">Ceny od 1440 Kč / noc</p>
 
@@ -104,12 +99,10 @@ export function Hero() {
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-stone-500">
                   Rychlý kontakt
                 </p>
-                <p className="mt-3 text-2xl font-semibold text-stone-900">
-                  Rezervace bez zbytečného čekání
-                </p>
+                <p className="mt-3 text-2xl font-semibold text-stone-900">Máte delší pobyt nebo více pokojů?</p>
                 <p className="mt-3 text-[15px] leading-7 text-stone-600">
-                  Pro běžný pobyt využijte online rezervaci. Pro delší termín, více pokojů nebo
-                  firemní ubytování nás kontaktujte přímo.
+                  Běžný pobyt vyřídíte online. Pro delší termín, více pokojů nebo firemní ubytování
+                  nás kontaktujte přímo.
                 </p>
               </div>
 

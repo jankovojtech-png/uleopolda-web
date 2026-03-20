@@ -9,15 +9,15 @@ export function LocationSection() {
             Lokalita
           </p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-            Brno-Komárov: klidná lokalita s dobrou dostupností
+            Brno-Komárov: klidné místo s dobrou dostupností
           </h2>
           <p className="mt-6 text-lg leading-8 text-stone-600">
-            Penzion najdete v Brně-Komárově. Poloha je vhodná pro hosty, kteří potřebují klidné
-            přespání a zároveň chtějí být rychle v centru města nebo na cestě za prací.
+            Penzion najdete v Brně-Komárově. Hodí se pro hosty, kteří chtějí klidné ubytování a
+            zároveň potřebují být rychle v centru nebo na hlavních tazích.
           </p>
           <div className="mt-8 space-y-3 text-[15px] leading-7 text-stone-600">
             <p>Dobré spojení do centra Brna i na hlavní dopravní tahy.</p>
-            <p>Praktická volba pro služební pobyty, jednotlivce i páry.</p>
+            <p>Praktická volba pro pracovní pobyty, jednotlivce i páry.</p>
             <p>Klidnější okolí než v rušných částech města.</p>
           </div>
           <a

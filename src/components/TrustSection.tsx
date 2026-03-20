@@ -1,7 +1,7 @@
 const facts = [
   { value: "4 typy", label: "pokojů a apartmánů" },
   { value: "Vlastní koupelna", label: "u všech nabízených typů" },
-  { value: "Wi‑Fi zdarma", label: "pro pracovní i běžný pobyt" },
+  { value: "Wi-Fi zdarma", label: "pro práci i běžný pobyt" },
   { value: "Krátké i delší pobyty", label: "pro jednotlivce, páry i firmy" },
 ];
 
@@ -12,14 +12,14 @@ export function TrustSection() {
         <div className="grid gap-10 rounded-[2rem] bg-[#f7f2eb] p-8 shadow-[0_24px_60px_rgba(28,25,23,0.06)] ring-1 ring-stone-200/70 lg:grid-cols-[0.8fr_1.2fr] lg:p-12">
           <div className="max-w-xl">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-stone-500">
-              Konkrétní informace
+              Praktické informace
             </p>
             <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-              Co u nás najdete před rezervací
+              Co je dobré vědět před rezervací
             </h2>
             <p className="mt-6 text-lg leading-8 text-stone-600">
-              Penzion U Leopolda je rodinné ubytování v Brně-Komárově. Nabízíme pokoje i apartmány
-              pro hosty, kteří chtějí praktické zázemí bez zbytečné složitosti.
+              Penzion U Leopolda je rodinné ubytování v Brně-Komárově. Nabízíme pokoje a apartmány
+              s vlastním zázemím pro krátké pobyty, pracovní cesty i delší ubytování.
             </p>
           </div>
 

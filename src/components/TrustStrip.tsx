@@ -1,7 +1,7 @@
 const trustItems = [
   "Hosté oceňují především klid, čistotu a jednoduchou domluvu.",
-  "Vhodné pro pracovní pobyty i krátké přespání v Brně.",
-  "Praktické zázemí pro jednotlivce, páry i delší pobyty.",
+  "Pokoje i apartmány mají vlastní koupelnu a praktické vybavení.",
+  "Vhodné pro krátké pobyty, pracovní cesty i delší ubytování.",
 ];
 
 export function TrustStrip() {

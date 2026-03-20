@@ -5,7 +5,7 @@ const steps = [
   },
   {
     number: "2",
-    title: "Potvrdíte rezervaci během pár kliknutí",
+    title: "Rezervaci potvrdíte v několika krocích",
   },
   {
     number: "3",
@@ -23,7 +23,7 @@ export function ReservationStepsSection() {
               Jak funguje rezervace
             </p>
             <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-              Rezervace je rychlá a zvládnete ji během chvíle
+              Rezervaci vyřídíte rychle online
             </h2>
           </div>
 

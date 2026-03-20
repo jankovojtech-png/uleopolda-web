@@ -15,10 +15,9 @@ export const rooms: Room[] = [
   {
     slug: "maly-apartman",
     title: "Malý apartmán",
-    shortDescription:
-      "Kompaktní apartmán s vlastním zázemím, ideální pro klidný pobyt jednotlivců i párů.",
+    shortDescription: "Kompaktní apartmán s vlastním zázemím pro jednotlivce i páry.",
     description:
-      "Malý apartmán nabízí útulné a klidné zázemí pro hosty, kteří hledají soukromí a pohodlí. Hodí se pro kratší i delší pobyt a díky vlastnímu zázemí působí velmi prakticky a příjemně.",
+      "Malý apartmán nabízí klidné a praktické zázemí pro kratší i delší pobyt. Díky vlastní koupelně a oddělenému prostoru je vhodný pro hosty, kteří chtějí více soukromí a pohodlí.",
     capacity: "1-3 osoby",
     capacityNote: "až pro 3 osoby",
     priceFrom: "od 1590 Kč / noc",
@@ -37,9 +36,9 @@ export const rooms: Room[] = [
   {
     slug: "velky-apartman",
     title: "Velký apartmán",
-    shortDescription: "Prostornější apartmán vhodný pro delší pobyty nebo více osob.",
+    shortDescription: "Prostornější apartmán pro delší pobyty, rodiny nebo více osob.",
     description:
-      "Velký apartmán je vhodný pro hosty, kteří chtějí více prostoru a pohodlí při delším pobytu. Ocení jej pracovní skupiny, páry i hosté, kteří mají rádi vzdušné a prakticky řešené ubytování.",
+      "Velký apartmán ocení hosté, kteří chtějí více prostoru a pohodlí. Hodí se pro delší pobyty, pracovní skupiny i rodiny, které hledají praktické a klidné ubytování v Brně.",
     capacity: "1-4 osoby",
     capacityNote: "až pro 4 osoby",
     priceFrom: "od 1740 Kč / noc",
@@ -58,9 +57,9 @@ export const rooms: Room[] = [
   {
     slug: "dvouluzkovy-pokoj",
     title: "Dvoulůžkový pokoj",
-    shortDescription: "Pohodlné ubytování pro dvě osoby s důrazem na klid a komfort.",
+    shortDescription: "Pohodlný pokoj pro dvě osoby, vhodný i na pracovní cestu.",
     description:
-      "Dvoulůžkový pokoj je jednoduchou a pohodlnou volbou pro páry i hosty na pracovních cestách. Nabízí vše potřebné pro příjemný pobyt v klidném prostředí rodinného penzionu.",
+      "Dvoulůžkový pokoj je dobrá volba pro páry i hosty na pracovní cestě. Nabízí vše potřebné pro klidný pobyt a jednoduché přespání v příjemném prostředí rodinného penzionu.",
     capacity: "1-2 osoby",
     capacityNote: "až pro 3 osoby",
     priceFrom: "od 1490 Kč / noc",
@@ -78,9 +77,9 @@ export const rooms: Room[] = [
   {
     slug: "jednoluzkovy-pokoj",
     title: "Jednolůžkový pokoj",
-    shortDescription: "Praktické a útulné řešení pro jednotlivce.",
+    shortDescription: "Praktický pokoj pro jednotlivce na krátký i pracovní pobyt.",
     description:
-      "Jednolůžkový pokoj je ideální pro jednotlivce, kteří chtějí čisté, klidné a praktické ubytování. Hodí se pro pracovní pobyty i kratší zastavení v Brně.",
+      "Jednolůžkový pokoj je vhodný pro hosty, kteří hledají čisté, klidné a jednoduché ubytování pro jednu osobu. Hodí se pro pracovní pobyty i kratší zastavení v Brně.",
     capacity: "1 osoba",
     capacityNote: "pro 1 osobu",
     priceFrom: "od 1440 Kč / noc",

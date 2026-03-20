@@ -4,7 +4,7 @@ const corporateBenefits = [
   "dlouhodobé pobyty",
   "fakturace",
   "více pokojů najednou",
-  "výhodné ceny při delším pobytu",
+  "výhodnější cena při delším pobytu",
 ];
 
 export function CorporateSection() {
@@ -16,7 +16,7 @@ export function CorporateSection() {
             Firemní klientela
           </p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-            Ubytování pro firmy a pracovní pobyty
+            Ubytování pro firmy a pracovní cesty
           </h2>
           <ul className="mt-6 space-y-3 text-lg leading-8 text-stone-600">
             {corporateBenefits.map((benefit) => (
