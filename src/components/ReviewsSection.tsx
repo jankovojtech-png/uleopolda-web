@@ -137,6 +137,7 @@ function renderStars(rating: number) {
 export function ReviewsSection() {
   const [data, setData] = useState<ReviewsResponse>(fallbackData);
   const [startIndex, setStartIndex] = useState(0);
+  const shouldRotate = data.reviews.length > 3;
 
   useEffect(() => {
     let isMounted = true;
@@ -168,12 +169,14 @@ export function ReviewsSection() {
             })),
           ),
         });
+        setStartIndex(0);
       } catch {
         if (isMounted) {
           setData({
             ...fallbackData,
             reviews: sortReviews(selectTrustedReviews(fallbackData.reviews)),
           });
+          setStartIndex(0);
         }
       }
     }
@@ -186,16 +189,17 @@ export function ReviewsSection() {
   }, []);
 
   useEffect(() => {
-    if (data.reviews.length <= 3) {
+    if (!shouldRotate) {
+      setStartIndex(0);
       return;
     }
 
     const interval = window.setInterval(() => {
       setStartIndex((current) => (current + 1) % data.reviews.length);
-    }, 5000);
+    }, 10000);
 
     return () => window.clearInterval(interval);
-  }, [data.reviews.length]);
+  }, [data.reviews.length, shouldRotate]);
 
   const visibleReviews = useMemo(
     () => getVisibleReviews(data.reviews, startIndex),

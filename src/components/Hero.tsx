@@ -60,7 +60,7 @@ export function Hero() {
               href="https://booking.previo.app/?id=019d0173-7772-7164-b6da-ed6b8dc36337&lang=cs&cur=CZK"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-[#cfb07c] px-8 py-4 text-center text-sm font-semibold text-stone-950 shadow-[0_10px_24px_rgba(154,124,73,0.18)] transition duration-200 hover:bg-[#d9bb89] hover:shadow-[0_12px_28px_rgba(154,124,73,0.22)]"
+              className="rounded-full bg-stone-900 px-8 py-4 text-center text-sm font-semibold text-white shadow-[0_14px_34px_rgba(28,25,23,0.18)] ring-1 ring-stone-950/10 transition duration-200 hover:-translate-y-0.5 hover:bg-stone-800 hover:shadow-[0_18px_40px_rgba(28,25,23,0.22)]"
             >
               Rezervovat pobyt
             </a>
@@ -97,12 +97,12 @@ export function Hero() {
             <div className="grid gap-4 p-6">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-stone-500">
-                  Rychlý kontakt
+                  Online rezervace a kontakt
                 </p>
-                <p className="mt-3 text-2xl font-semibold text-stone-900">Máte delší pobyt nebo více pokojů?</p>
+                <p className="mt-3 text-2xl font-semibold text-stone-900">Rezervace online i přímý kontakt</p>
                 <p className="mt-3 text-[15px] leading-7 text-stone-600">
-                  Běžný pobyt vyřídíte online. Pro delší termín, více pokojů nebo firemní ubytování
-                  nás kontaktujte přímo.
+                  Rezervaci pobytu vyřídíte online během pár kliknutí. Pokud řešíte delší termín,
+                  více pokojů nebo firemní ubytování, ozvěte se nám přímo.
                 </p>
               </div>
 
