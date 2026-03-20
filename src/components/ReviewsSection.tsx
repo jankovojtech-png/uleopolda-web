@@ -75,11 +75,16 @@ function selectTrustedReviews<T extends { rating: number }>(reviews: T[]) {
 }
 
 function getVisibleReviews(reviews: Review[], startIndex: number) {
-  if (reviews.length <= 3) {
+  if (reviews.length <= 1) {
     return reviews;
   }
 
-  return Array.from({ length: 3 }, (_, index) => reviews[(startIndex + index) % reviews.length]);
+  const visibleCount = reviews.length >= 3 ? 3 : reviews.length;
+
+  return Array.from(
+    { length: visibleCount },
+    (_, index) => reviews[(startIndex + index) % reviews.length],
+  );
 }
 
 function formatRating(value: number) {
@@ -193,7 +198,7 @@ export function ReviewsSection() {
       return;
     }
 
-    if (data.reviews.length <= 3) {
+    if (data.reviews.length < 2) {
       setCurrentIndex(0);
       return;
     }
