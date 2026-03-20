@@ -21,6 +21,7 @@ type CachedReviews = {
 
 const CACHE_DURATION_MS = 24 * 60 * 60 * 1000;
 const PLACE_QUERY = "Penzion U Leopolda Brno Komarov";
+const MAX_REVIEWS = 6;
 
 let cache: CachedReviews | null = null;
 
@@ -36,11 +37,18 @@ function repairEncoding(value: string) {
   }
 }
 
-function selectTrustedReviews<T extends { rating?: number }>(reviews: T[]) {
-  const highRatedReviews = reviews.filter((review) => (review.rating ?? 0) >= 4);
-  const source = highRatedReviews.length >= 3 ? highRatedReviews : reviews;
+function selectTrustedReviews<T extends { rating?: number; text?: string }>(reviews: T[]) {
+  const sorted = [...reviews].sort((left, right) => {
+    const ratingDifference = (right.rating ?? 0) - (left.rating ?? 0);
 
-  return source.slice(0, 6);
+    if (ratingDifference !== 0) {
+      return ratingDifference;
+    }
+
+    return (right.text ?? "").length - (left.text ?? "").length;
+  });
+
+  return sorted.slice(0, MAX_REVIEWS);
 }
 
 async function fetchPlaceId(apiKey: string) {
@@ -98,13 +106,39 @@ async function fetchPlaceDetails(apiKey: string, placeId: string) {
 }
 
 function normalizeReviews(reviews: GoogleReview[] = []) {
-  return selectTrustedReviews(
-    reviews.filter((review) => review.text && review.author_name),
-  ).map((review) => ({
-    author: repairEncoding(review.author_name ?? "Google host"),
-    rating: review.rating ?? 0,
-    text: repairEncoding(review.text ?? ""),
+  const normalizedSource = reviews
+    .map((review) => ({
+      author: repairEncoding(review.author_name ?? "").trim(),
+      rating: review.rating ?? 0,
+      text: repairEncoding(review.text ?? "").trim(),
+    }))
+    .filter((review) => review.author && review.text);
+
+  const deduped = normalizedSource.filter((review, index, source) => {
+    return (
+      source.findIndex(
+        (candidate) =>
+          candidate.author === review.author &&
+          candidate.text === review.text &&
+          candidate.rating === review.rating,
+      ) === index
+    );
+  });
+
+  const selected = selectTrustedReviews(deduped).map((review) => ({
+    author: review.author,
+    rating: review.rating,
+    text: review.text,
   }));
+
+  console.info("[google-reviews] pipeline", {
+    received: reviews.length,
+    normalized: normalizedSource.length,
+    deduped: deduped.length,
+    sent: selected.length,
+  });
+
+  return selected;
 }
 
 export async function GET() {

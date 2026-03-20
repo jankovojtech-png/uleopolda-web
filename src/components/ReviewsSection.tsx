@@ -16,6 +16,8 @@ type ReviewsResponse = {
 
 const GOOGLE_MAPS_REVIEWS_URL =
   "https://www.google.com/maps/search/?api=1&query=Penzion+U+Leopolda+Brno+Komarov";
+const MAX_REVIEWS = 6;
+const MIN_REVIEWS_TO_ROTATE = 4;
 
 const fallbackData: ReviewsResponse = {
   rating: 4.8,
@@ -67,19 +69,16 @@ function repairEncoding(value: string) {
   }
 }
 
-function selectTrustedReviews<T extends { rating: number }>(reviews: T[]) {
-  const highRatedReviews = reviews.filter((review) => review.rating >= 4);
-  const source = highRatedReviews.length >= 3 ? highRatedReviews : reviews;
-
-  return source.slice(0, 6);
-}
-
 function getVisibleReviews(reviews: Review[], startIndex: number) {
   if (reviews.length <= 1) {
     return reviews;
   }
 
-  const visibleCount = reviews.length >= 3 ? 3 : reviews.length;
+  if (reviews.length < MIN_REVIEWS_TO_ROTATE) {
+    return reviews;
+  }
+
+  const visibleCount = Math.min(3, reviews.length);
 
   return Array.from(
     { length: visibleCount },
@@ -131,6 +130,29 @@ function sortReviews(reviews: Review[]) {
   });
 }
 
+function normalizeReviews(reviews: Review[]) {
+  const normalized = reviews
+    .map((review) => ({
+      author: getDisplayAuthor(review.author),
+      rating: review.rating,
+      text: repairEncoding(review.text).trim(),
+    }))
+    .filter((review) => review.author && review.text);
+
+  const deduped = normalized.filter((review, index, source) => {
+    return (
+      source.findIndex(
+        (candidate) =>
+          candidate.author === review.author &&
+          candidate.text === review.text &&
+          candidate.rating === review.rating,
+      ) === index
+    );
+  });
+
+  return sortReviews(deduped).slice(0, MAX_REVIEWS);
+}
+
 function renderStars(rating: number) {
   return Array.from({ length: 5 }, (_, index) => (
     <span key={`${rating}-${index}`} aria-hidden="true">
@@ -162,23 +184,26 @@ export function ReviewsSection() {
           return;
         }
 
+        const normalizedReviews = normalizeReviews(payload.reviews);
+
+        console.info("[reviews-section] fetched reviews", {
+          apiCount: payload.reviews.length,
+          renderedCount: normalizedReviews.length,
+        });
+
         setData({
           rating: payload.rating ?? fallbackData.rating,
           total: payload.total ?? fallbackData.total,
-          reviews: sortReviews(
-            selectTrustedReviews(payload.reviews).map((review) => ({
-              author: getDisplayAuthor(review.author),
-              rating: review.rating,
-              text: repairEncoding(review.text),
-            })),
-          ),
+          reviews: normalizedReviews,
         });
         setCurrentIndex(0);
       } catch {
         if (isMounted) {
+          const normalizedFallbackReviews = normalizeReviews(fallbackData.reviews);
+
           setData({
             ...fallbackData,
-            reviews: sortReviews(selectTrustedReviews(fallbackData.reviews)),
+            reviews: normalizedFallbackReviews,
           });
           setCurrentIndex(0);
         }
@@ -198,7 +223,7 @@ export function ReviewsSection() {
       return;
     }
 
-    if (data.reviews.length < 2) {
+    if (data.reviews.length < MIN_REVIEWS_TO_ROTATE) {
       setCurrentIndex(0);
       return;
     }
