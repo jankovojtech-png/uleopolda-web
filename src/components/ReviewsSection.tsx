@@ -136,8 +136,7 @@ function renderStars(rating: number) {
 
 export function ReviewsSection() {
   const [data, setData] = useState<ReviewsResponse>(fallbackData);
-  const [startIndex, setStartIndex] = useState(0);
-  const shouldRotate = data.total >= 23 && data.reviews.length > 3;
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     let isMounted = true;
@@ -169,14 +168,14 @@ export function ReviewsSection() {
             })),
           ),
         });
-        setStartIndex(0);
+        setCurrentIndex(0);
       } catch {
         if (isMounted) {
           setData({
             ...fallbackData,
             reviews: sortReviews(selectTrustedReviews(fallbackData.reviews)),
           });
-          setStartIndex(0);
+          setCurrentIndex(0);
         }
       }
     }
@@ -189,21 +188,26 @@ export function ReviewsSection() {
   }, []);
 
   useEffect(() => {
-    if (!shouldRotate) {
-      setStartIndex(0);
+    if (!data.reviews?.length) {
+      setCurrentIndex(0);
+      return;
+    }
+
+    if (data.reviews.length <= 3) {
+      setCurrentIndex(0);
       return;
     }
 
     const interval = window.setInterval(() => {
-      setStartIndex((current) => (current + 1) % data.reviews.length);
+      setCurrentIndex((previous) => (previous + 1) % data.reviews.length);
     }, 10000);
 
     return () => window.clearInterval(interval);
-  }, [data.reviews.length, shouldRotate]);
+  }, [data.reviews]);
 
   const visibleReviews = useMemo(
-    () => getVisibleReviews(data.reviews, startIndex),
-    [data.reviews, startIndex],
+    () => getVisibleReviews(data.reviews, currentIndex),
+    [data.reviews, currentIndex],
   );
 
   return (
@@ -239,7 +243,7 @@ export function ReviewsSection() {
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {visibleReviews.map((review, index) => (
             <blockquote
-              key={`${startIndex}-${review.author}-${index}-${review.text.slice(0, 24)}`}
+              key={`${currentIndex}-${review.author}-${index}-${review.text.slice(0, 24)}`}
               className="rounded-[1.5rem] bg-[#faf7f2] px-6 py-5 text-[15px] leading-7 text-stone-700 shadow-[0_12px_30px_rgba(28,25,23,0.05)] ring-1 ring-stone-200/70"
             >
               <p>{trimReviewText(review.text)}</p>
