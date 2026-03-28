@@ -169,16 +169,28 @@ export function ReviewsSection() {
           return;
         }
 
+        // Spojíme recenze z API s našimi záložními recenzemi, abychom jich měli víc na rotaci
+        const combinedReviews = [...payload.reviews, ...fallbackData.reviews];
+
+        // Odstraníme případné duplikáty
+        const uniqueReviews = combinedReviews.filter((review, index, self) =>
+          index === self.findIndex((r) => r.author === review.author && r.text === review.text)
+        );
+
+        // Zamícháme je
+        const shuffled = uniqueReviews.sort(() => Math.random() - 0.5);
+
         setData({
           rating: payload.rating ?? fallbackData.rating,
           total: payload.total ?? fallbackData.total,
-          reviews: normalizeReviews(payload.reviews),
+          reviews: shuffled,
         });
       } catch {
         if (isMounted) {
+          const shuffledFallback = [...fallbackData.reviews].sort(() => Math.random() - 0.5);
           setData({
             ...fallbackData,
-            reviews: normalizeReviews(fallbackData.reviews),
+            reviews: shuffledFallback,
           });
         }
       }
@@ -192,10 +204,6 @@ export function ReviewsSection() {
   }, []);
 
   const visibleReviews = data.reviews.slice(0, Math.min(VISIBLE_REVIEW_COUNT, data.reviews.length));
-
-  // Pokud chceme, aby se recenze měnily i při pouhém klikání na webu bez refreshe,
-  // můžeme je zamíchat přímo tady při renderu.
-  const shuffledVisibleReviews = [...visibleReviews].sort(() => Math.random() - 0.5);
 
   return (
     <section className="py-24 sm:py-32">
@@ -228,7 +236,7 @@ export function ReviewsSection() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {shuffledVisibleReviews.map((review, index) => (
+          {visibleReviews.map((review, index) => (
             <blockquote
               key={`${review.author}-${index}-${review.text.slice(0, 24)}`}
               className="rounded-[1.5rem] bg-[#faf7f2] px-6 py-5 text-[15px] leading-7 text-stone-700 shadow-[0_12px_30px_rgba(28,25,23,0.05)] ring-1 ring-stone-200/70"
