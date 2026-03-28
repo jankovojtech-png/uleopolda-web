@@ -14,7 +14,7 @@ export function PracticalInfoBlock() {
       <div className="absolute inset-0 -z-10">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.25]"
-          style={{ backgroundImage: "url('/images/17.jpg')" }}
+          style={{ backgroundImage: "url('/images/21.jpg')" }}
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,#f6f1ea_0%,transparent_15%,transparent_85%,#f6f1ea_100%)]" />
       </div>
