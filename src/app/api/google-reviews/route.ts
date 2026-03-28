@@ -153,7 +153,12 @@ export async function GET() {
     }
 
     if (cache && Date.now() - cache.timestamp < CACHE_DURATION_MS) {
-      return NextResponse.json(cache.data);
+      // Return cached data, but shuffle the reviews so they rotate on every request
+      const shuffledReviews = [...cache.data.reviews].sort(() => Math.random() - 0.5);
+      return NextResponse.json({
+        ...cache.data,
+        reviews: shuffledReviews,
+      });
     }
 
     const placeId = await fetchPlaceId(apiKey);
