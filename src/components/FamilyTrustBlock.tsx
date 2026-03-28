@@ -22,7 +22,7 @@ export function FamilyTrustBlock() {
           
           <div className="relative mt-4 lg:mt-0">
             <LightboxImage
-              src="/images/20.jpg"
+              src="/images/32.jpg"
               alt="Příjemné prostředí penzionu U Leopolda"
               width={800}
               height={600}

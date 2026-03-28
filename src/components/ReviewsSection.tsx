@@ -133,7 +133,10 @@ function normalizeReviews(reviews: Review[]) {
     );
   });
 
-  return sortReviews(deduped).slice(0, MAX_REVIEWS);
+  // Shuffle the reviews so they rotate on the frontend too (fallback data)
+  const shuffled = [...deduped].sort(() => Math.random() - 0.5);
+
+  return sortReviews(shuffled).slice(0, MAX_REVIEWS);
 }
 
 function renderStars(rating: number) {
