@@ -112,7 +112,7 @@ function normalizeReviews(reviews: GoogleReview[] = []) {
       rating: review.rating ?? 0,
       text: repairEncoding(review.text ?? "").trim(),
     }))
-    .filter((review) => review.author && review.text);
+    .filter((review) => review.author && review.text && review.rating >= 4);
 
   const deduped = normalizedSource.filter((review, index, source) => {
     return (
@@ -125,7 +125,10 @@ function normalizeReviews(reviews: GoogleReview[] = []) {
     );
   });
 
-  const selected = selectTrustedReviews(deduped).map((review) => ({
+  // Shuffle the reviews randomly so they rotate
+  const shuffled = [...deduped].sort(() => Math.random() - 0.5);
+
+  const selected = selectTrustedReviews(shuffled).map((review) => ({
     author: review.author,
     rating: review.rating,
     text: review.text,

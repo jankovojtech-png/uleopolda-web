@@ -11,12 +11,12 @@ export function PracticalInfoBlock() {
   return (
     <section className="relative py-20 sm:py-28">
       {/* Jemné pozadí na celou šířku pro rozbití textového bloku */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.12]"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.45]"
           style={{ backgroundImage: "url('/images/17.jpg')" }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,#f6f1ea_0%,rgba(246,241,234,0.85)_20%,rgba(246,241,234,0.85)_80%,#f6f1ea_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#f6f1ea_0%,rgba(246,241,234,0.55)_20%,rgba(246,241,234,0.55)_80%,#f6f1ea_100%)]" />
       </div>
 
       <div className="mx-auto max-w-6xl px-6">
