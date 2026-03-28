@@ -9,16 +9,16 @@ export function LocationSection() {
             Lokalita
           </p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-            Brno-Komárov: klidné místo s dobrou dostupností
+            Brno-Komárov: klidné zázemí s rychlým dojezdem do centra
           </h2>
           <p className="mt-6 text-lg leading-8 text-stone-600">
-            Penzion najdete v Brně-Komárově. Hodí se pro hosty, kteří chtějí klidné ubytování a
-            zároveň potřebují být rychle v centru nebo na hlavních tazích.
+            Penzion najdete v Brně-Komárově, kde se večer vyspíte mimo centrum a přitom jste autem
+            i MHD rychle tam, kam potřebujete.
           </p>
           <div className="mt-8 space-y-3 text-[15px] leading-7 text-stone-600">
-            <p>Dobré spojení do centra Brna i na hlavní dopravní tahy.</p>
-            <p>Praktická volba pro pracovní pobyty, jednotlivce i páry.</p>
-            <p>Klidnější okolí než v rušných částech města.</p>
+            <p>Na tramvaj se dostanete za pár minut a do centra Brna jste přibližně za 10 minut.</p>
+            <p>Autem sem pohodlně přijedete z hlavních tahů i s rychlým napojením na dálnici.</p>
+            <p>Hodí se pro hosty, kteří chtějí mít Brno po ruce a večer si odpočinout v klidnějším okolí.</p>
           </div>
           <a
             href="#kontakt"

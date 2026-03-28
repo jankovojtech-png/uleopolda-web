@@ -1,15 +1,15 @@
 const steps = [
   {
     number: "1",
-    title: "Vyberete termín online",
+    title: "Vyberete si termín a pokoj",
   },
   {
     number: "2",
-    title: "Rezervaci potvrdíte v několika krocích",
+    title: "Během chvilky potvrdíte rezervaci",
   },
   {
     number: "3",
-    title: "Přijedete a ubytujete se",
+    title: "My už se postaráme o váš skvělý pobyt",
   },
 ];
 
@@ -23,7 +23,7 @@ export function ReservationStepsSection() {
               Jak funguje rezervace
             </p>
             <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-              Rezervaci vyřídíte rychle online
+              Tři jednoduché kroky k vašemu pobytu
             </h2>
           </div>
 

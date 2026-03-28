@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "U Leopolda | Ubytování v Brně",
-  description: "Komfortní ubytování v Brně pro firmy i jednotlivce.",
+  description: "Klidné a čisté ubytování v Brně pro víkend, krátký pobyt i pracovní cestu.",
 };
 
 export default function RootLayout({

@@ -4,8 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navigation = [
+  { label: "O nás", href: "/#o-nas" },
   { label: "Ubytování", href: "/#ubytovani" },
-  { label: "Pro firmy", href: "/#firmy" },
+  { label: "Delší pobyty", href: "/#firmy" },
   { label: "Galerie", href: "/#galerie" },
   { label: "Pokoje", href: "/pokoje" },
   { label: "Lokalita", href: "/#lokalita" },

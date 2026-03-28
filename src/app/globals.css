@@ -27,3 +27,27 @@ body {
   font-family: var(--font-geist-sans), sans-serif;
   line-height: 1.6;
 }
+
+.reviews-carousel-track {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 450ms ease,
+    transform 450ms ease;
+}
+
+.reviews-carousel-track[data-transitioning="true"] {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-carousel-track {
+    transition: none;
+  }
+
+  .reviews-carousel-track[data-transitioning="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}

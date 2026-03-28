@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 type Review = {
   author: string;
@@ -17,7 +17,7 @@ type ReviewsResponse = {
 const GOOGLE_MAPS_REVIEWS_URL =
   "https://www.google.com/maps/search/?api=1&query=Penzion+U+Leopolda+Brno+Komarov";
 const MAX_REVIEWS = 6;
-const MIN_REVIEWS_TO_ROTATE = 4;
+const VISIBLE_REVIEW_COUNT = 3;
 
 const fallbackData: ReviewsResponse = {
   rating: 4.8,
@@ -26,38 +26,38 @@ const fallbackData: ReviewsResponse = {
     {
       author: "Martina",
       rating: 5,
-      text: "Klidné místo na přespání, všechno čisté a bez komplikací.",
+      text: "V penzionu byl večer klid a spalo se opravdu dobře. Pan majitel nám ochotně poradil i s pozdějším příjezdem.",
     },
     {
       author: "Petr",
       rating: 5,
-      text: "Čisté pokoje, pohodlné postele a snadný příjezd i pozdě večer.",
+      text: "Pohodlná postel, ticho na pokoji a ráno výborná snídaně. Přesně to, co jsme po cestě do Brna potřebovali.",
     },
     {
       author: "Jana",
       rating: 5,
-      text: "Domluva před příjezdem byla rychlá a bez problémů.",
+      text: "Domluva před příjezdem byla milá a rychlá. Bylo znát, že se hostům někdo opravdu věnuje.",
     },
     {
       author: "Tomáš",
       rating: 5,
-      text: "Dobrá volba na pracovní cestu, oceňuji klid a parkování.",
+      text: "Na pracovní cestu ideální místo. Večer klid, ráno snadný odjezd a parkování hned u penzionu.",
     },
     {
       author: "Lucie",
       rating: 5,
-      text: "Parkování hned u penzionu a pokoj působil velmi udržovaně.",
+      text: "Pokoj působil velmi pečlivě udržovaně a celý pobyt měl příjemnou rodinnou atmosféru.",
     },
     {
       author: "David",
       rating: 5,
-      text: "Dobře dostupné do centra Brna, přitom na místě příjemný klid.",
+      text: "Dobrá dostupnost do centra Brna a přitom příjemný klid. Rád bych se sem při další cestě vrátil.",
     },
   ],
 };
 
 function repairEncoding(value: string) {
-  if (!/[Ä‚Ă…Ă„Ă˘ÄąĂ‚]/.test(value)) {
+  if (!/[Ă„â€šÄ‚â€¦Ä‚â€žÄ‚ËĂ„Ä…Ä‚â€š]/.test(value)) {
     return value;
   }
 
@@ -67,23 +67,6 @@ function repairEncoding(value: string) {
   } catch {
     return value;
   }
-}
-
-function getVisibleReviews(reviews: Review[], startIndex: number) {
-  if (reviews.length <= 1) {
-    return reviews;
-  }
-
-  if (reviews.length < MIN_REVIEWS_TO_ROTATE) {
-    return reviews;
-  }
-
-  const visibleCount = Math.min(3, reviews.length);
-
-  return Array.from(
-    { length: visibleCount },
-    (_, index) => reviews[(startIndex + index) % reviews.length],
-  );
 }
 
 function formatRating(value: number) {
@@ -107,7 +90,7 @@ function getDisplayAuthor(author: string) {
   return normalized;
 }
 
-function trimReviewText(text: string, maxLength = 160) {
+function trimReviewText(text: string, maxLength = 180) {
   const normalized = repairEncoding(text).trim();
 
   if (normalized.length <= maxLength) {
@@ -117,7 +100,7 @@ function trimReviewText(text: string, maxLength = 160) {
   const trimmed = normalized.slice(0, maxLength).trimEnd();
   const lastSpace = trimmed.lastIndexOf(" ");
 
-  return `${(lastSpace > 100 ? trimmed.slice(0, lastSpace) : trimmed).trimEnd()}...`;
+  return `${(lastSpace > 120 ? trimmed.slice(0, lastSpace) : trimmed).trimEnd()}...`;
 }
 
 function sortReviews(reviews: Review[]) {
@@ -137,7 +120,7 @@ function normalizeReviews(reviews: Review[]) {
       rating: review.rating,
       text: repairEncoding(review.text).trim(),
     }))
-    .filter((review) => review.author && review.text);
+    .filter((review) => review.author && review.text && review.rating >= 4);
 
   const deduped = normalized.filter((review, index, source) => {
     return (
@@ -163,7 +146,6 @@ function renderStars(rating: number) {
 
 export function ReviewsSection() {
   const [data, setData] = useState<ReviewsResponse>(fallbackData);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     let isMounted = true;
@@ -184,28 +166,17 @@ export function ReviewsSection() {
           return;
         }
 
-        const normalizedReviews = normalizeReviews(payload.reviews);
-
-        console.info("[reviews-section] fetched reviews", {
-          apiCount: payload.reviews.length,
-          renderedCount: normalizedReviews.length,
-        });
-
         setData({
           rating: payload.rating ?? fallbackData.rating,
           total: payload.total ?? fallbackData.total,
-          reviews: normalizedReviews,
+          reviews: normalizeReviews(payload.reviews),
         });
-        setCurrentIndex(0);
       } catch {
         if (isMounted) {
-          const normalizedFallbackReviews = normalizeReviews(fallbackData.reviews);
-
           setData({
             ...fallbackData,
-            reviews: normalizedFallbackReviews,
+            reviews: normalizeReviews(fallbackData.reviews),
           });
-          setCurrentIndex(0);
         }
       }
     }
@@ -217,28 +188,7 @@ export function ReviewsSection() {
     };
   }, []);
 
-  useEffect(() => {
-    if (!data.reviews?.length) {
-      setCurrentIndex(0);
-      return;
-    }
-
-    if (data.reviews.length < MIN_REVIEWS_TO_ROTATE) {
-      setCurrentIndex(0);
-      return;
-    }
-
-    const interval = window.setInterval(() => {
-      setCurrentIndex((previous) => (previous + 1) % data.reviews.length);
-    }, 10000);
-
-    return () => window.clearInterval(interval);
-  }, [data.reviews]);
-
-  const visibleReviews = useMemo(
-    () => getVisibleReviews(data.reviews, currentIndex),
-    [data.reviews, currentIndex],
-  );
+  const visibleReviews = data.reviews.slice(0, Math.min(VISIBLE_REVIEW_COUNT, data.reviews.length));
 
   return (
     <section className="py-24 sm:py-32">
@@ -251,7 +201,7 @@ export function ReviewsSection() {
             Co říkají hosté
           </h2>
           <p className="mt-5 text-lg leading-8 text-stone-600">
-            Hosté oceňují především klid, čistotu a jednoduchou domluvu.
+            Největší radost nám dělá, když se u nás cítíte jako doma. Hosté nejčastěji chválí klidné prostředí, bohaté snídaně a náš osobní přístup.
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-base font-semibold text-stone-700">
             <span className="flex text-[15px] text-[#cdae7a]">{renderStars(data.rating)}</span>
@@ -273,7 +223,7 @@ export function ReviewsSection() {
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {visibleReviews.map((review, index) => (
             <blockquote
-              key={`${currentIndex}-${review.author}-${index}-${review.text.slice(0, 24)}`}
+              key={`${review.author}-${index}-${review.text.slice(0, 24)}`}
               className="rounded-[1.5rem] bg-[#faf7f2] px-6 py-5 text-[15px] leading-7 text-stone-700 shadow-[0_12px_30px_rgba(28,25,23,0.05)] ring-1 ring-stone-200/70"
             >
               <p>{trimReviewText(review.text)}</p>

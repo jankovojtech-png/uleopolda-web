@@ -3,12 +3,12 @@ import { LightboxImage } from "@/components/LightboxImage";
 const accommodationCards = [
   {
     title: "Pokoje a apartmány na pár nocí",
-    text: "Čisté a klidné ubytování pro krátký pobyt, přespání i víkend v Brně.",
+    text: "Čisté a klidné ubytování pro krátký pobyt, víkend v Brně, návštěvu města i pohodlné přespání.",
     image: "/images/3.jpg",
   },
   {
-    title: "Praktická volba na pracovní cestu",
-    text: "Vhodné zázemí pro jednotlivce i kolegy, kteří potřebují klid, Wi-Fi a snadný příjezd.",
+    title: "Ideální zázemí pro pracovní cestu",
+    text: "Po náročném dni oceníte klid, vlastní koupelnu, rychlé Wi-Fi, bezproblémové parkování a možnost bohaté snídaně.",
     image: "/images/26.jpg",
   },
 ];
@@ -23,10 +23,11 @@ export function AccommodationPreview() {
               Ubytování
             </p>
             <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:mt-4 sm:text-5xl">
-              Jaké ubytování u nás najdete
+              Ubytování pro krátký pobyt i víkend v Brně
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-stone-600 sm:mt-5 sm:text-lg sm:leading-8">
-              Rychlý přehled pro hosty, kteří hledají pokoj nebo apartmán v Brně.
+              Rychlý přehled pro hosty, kteří hledají čistý pokoj nebo apartmán na pár nocí, víkend
+              i pracovní cestu.
             </p>
           </div>
           <a

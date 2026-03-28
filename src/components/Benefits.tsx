@@ -1,25 +1,33 @@
+import Link from "next/link";
+
 const benefits = [
   {
-    title: "Pro pracovní pobyty",
-    description: "Vhodné zázemí pro služební cesty i opakované pobyty v Brně.",
+    title: "Bohaté snídaně",
+    description:
+      "Začněte den skvělou snídaní formou švédských stolů. Vychutnat si ji můžete v naší zimní zahradě nebo letním altánu.",
     image: "/images/40.jpg",
     imagePosition: "center center",
   },
   {
     title: "Klidná lokalita",
-    description: "Brno-Komárov mimo rušné centrum, ale s dobrou dostupností.",
+    description:
+      "U nás najdete klid od ruchu velkoměsta, ale do centra Brna nebo na dálnici se dostanete bez složitého zajíždění za pár minut.",
     image: "/images/31.jpg",
     imagePosition: "center center",
   },
   {
     title: "Soukromí a pohodlí",
-    description: "Pokoje s vlastním zázemím pro klidný a pohodlný pobyt.",
+    description:
+      "Komfortně a čistě zařízené pokoje s vlastní koupelnou a rychlým Wi-Fi připojením pro váš klidný pobyt.",
     image: "/images/23.jpg",
     imagePosition: "center center",
   },
   {
-    title: "Jednoduchá rezervace",
-    description: "Termín si zarezervujete online rychle a přehledně.",
+    title: "Parkování u penzionu",
+    description:
+      "K dispozici máme vyhrazená stání přímo před budovou. Pokud jsou obsazená, lze bez problémů zaparkovat v okolí.",
+    link: "/parkovani",
+    linkText: "Více o parkování",
     image: "/images/30.jpg",
     imagePosition: "center center",
   },
@@ -31,13 +39,13 @@ export function Benefits() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-10 max-w-3xl sm:mb-14">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-stone-500">
-            Pro koho je penzion vhodný
+            Proč si hosté vybírají právě nás
           </p>
           <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:mt-4 sm:text-5xl">
-            Proč si hosté vybírají právě nás
+            Co hosté oceňují nejvíc
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-7 text-stone-600 sm:mt-5 sm:text-lg sm:leading-8">
-            Klidné a praktické ubytování pro hosty, kteří chtějí mít vše bez komplikací.
+            Pečlivě udržované ubytování s rodinnou atmosférou, kde se budete cítit dobře na pracovní cestě i rodinném výletě.
           </p>
         </div>
 
@@ -66,6 +74,15 @@ export function Benefits() {
                 <p className="mt-2.5 max-w-[22rem] text-[15px] leading-6 text-stone-700 sm:mt-3 sm:leading-7">
                   {benefit.description}
                 </p>
+                {benefit.link && benefit.linkText && (
+                  <Link
+                    href={benefit.link}
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 transition hover:text-stone-950"
+                  >
+                    {benefit.linkText}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                )}
               </div>
             </div>
           ))}

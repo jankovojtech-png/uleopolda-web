@@ -13,12 +13,7 @@ const heroImages = [
   "/images/17.jpg",
 ];
 
-const trustPoints = [
-  "Parkování zdarma",
-  "Wi-Fi zdarma",
-  "Vlastní koupelna",
-  "Dobrá dostupnost do centra",
-];
+const trustPoints = ["Parkování zdarma", "Wi-Fi zdarma", "Vlastní koupelna", "Bohaté snídaně"];
 
 export function Hero() {
   const [activeImage, setActiveImage] = useState(0);
@@ -47,17 +42,19 @@ export function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,247,241,0.14)_0%,rgba(251,247,241,0.06)_34%,rgba(251,247,241,0.36)_100%)] sm:bg-[linear-gradient(90deg,rgba(247,242,235,0.64)_0%,rgba(247,242,235,0.44)_44%,rgba(247,242,235,0.14)_100%)] lg:bg-[linear-gradient(90deg,rgba(247,242,235,0.9)_0%,rgba(247,242,235,0.8)_42%,rgba(247,242,235,0.42)_100%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.01)_0%,rgba(255,255,255,0.08)_100%)] lg:bg-[linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.2)_100%)]" />
 
-      <div className="relative mx-auto grid min-h-[100svh] max-w-6xl items-start gap-8 px-6 pt-20 pb-12 sm:min-h-[86vh] sm:items-center sm:gap-14 sm:py-24 lg:grid-cols-[1.02fr_0.98fr] lg:py-32">
+      <div className="relative mx-auto grid min-h-[100svh] max-w-6xl items-start gap-8 px-6 pb-12 pt-20 sm:min-h-[86vh] sm:items-center sm:gap-14 sm:py-24 lg:grid-cols-[1.02fr_0.98fr] lg:py-32">
         <div className="max-w-3xl rounded-[1.75rem] bg-white/34 p-5 backdrop-blur-[1px] sm:bg-transparent sm:p-0 sm:backdrop-blur-0">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-stone-600 sm:mb-6 sm:text-sm sm:font-medium sm:tracking-[0.32em]">
             Penzion U Leopolda • Brno-Komárov
           </p>
           <h1 className="max-w-3xl text-[2.2rem] font-semibold leading-[1.02] tracking-[-0.035em] text-stone-900 sm:text-5xl lg:text-6xl">
-            Klidné ubytování v Brně
+            Rodinný penzion v Brně
           </h1>
           <p className="mt-4 max-w-xl text-[15px] leading-6 text-stone-700 sm:mt-6 sm:text-lg sm:leading-8">
-            Čisté pokoje a apartmány s vlastní koupelnou, Wi-Fi a parkováním v klidné části Brna s
-            dobrou dostupností do centra.
+            Komfortní a čisté pokoje s vlastní koupelnou, Wi-Fi a parkováním v klidné části Brna s výbornou dostupností do centra. Rádi vás osobně přivítáme a připravíme vám bohatou snídani.
+          </p>
+          <p className="mt-3 max-w-xl text-[15px] leading-6 text-stone-600 sm:text-base sm:leading-7">
+            Ať už k nám jedete za prací, odpočinkem nebo hledáte místo pro rodinnou oslavu, postaráme se, abyste se u nás cítili jako doma.
           </p>
           <p className="mt-4 text-base font-medium text-stone-800 sm:text-lg">Ceny od 1440 Kč / noc</p>
 
@@ -109,8 +106,8 @@ export function Hero() {
                   Rezervace online i přímý kontakt
                 </p>
                 <p className="mt-3 text-[15px] leading-7 text-stone-600">
-                  Rezervaci vyřídíte online během pár kliknutí. Vyberte si termín a máte hotovo.
-                  Pokud si nebudete jistí výběrem pokoje, rádi poradíme.
+                  Rezervaci vyřídíte online během pár kliknutí. Když budete chtít předem probrat
+                  pokoj, čas příjezdu nebo delší ubytování, stačí se nám ozvat.
                 </p>
               </div>
 

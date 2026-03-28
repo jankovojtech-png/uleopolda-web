@@ -7,6 +7,9 @@ export function Footer() {
         <div className="flex flex-col gap-3 text-sm text-stone-500 md:flex-row md:items-center md:justify-between">
           <p>© 2026 U Leopolda. Všechna práva vyhrazena.</p>
           <div className="flex gap-6">
+            <Link href="/parkovani" className="transition duration-200 hover:text-stone-900">
+              Parkování
+            </Link>
             <Link href="/#kontakt" className="transition duration-200 hover:text-stone-900">
               Kontakt
             </Link>
@@ -26,8 +29,8 @@ export function Footer() {
 
         <div className="mt-4 border-t border-stone-200/60 pt-3 text-xs leading-5 text-stone-400">
           <p>
-            Provozovatel: Vojtěch Janko | IČO: 02016915 | DIČ: CZ9304194196 | Sídlo firmy:
-            Jeneweinova 133/51
+            Provozovatel: Vojtěch Janko | IČO: 02016915 | DIČ: CZ9304194196 | Adresa penzionu:
+            Jeneweinova 49/51, 617 00 Brno-Komárov
           </p>
         </div>
       </div>

@@ -47,14 +47,16 @@ export function ContactSection() {
               Kontakt
             </p>
             <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-              Rezervace a dotazy na jednom místě
+              Jsme tu pro vás. Ozvěte se nám.
             </h2>
             <p className="mt-6 text-lg leading-8 text-stone-600">
-              Pro běžný pobyt použijte online rezervaci. Pokud řešíte delší termín, firemní
-              ubytování nebo se chcete na něco doptat, kontaktujte nás přímo.
+              Ať už si chcete rovnou rezervovat pokoj, nebo potřebujete poradit s výběrem, rádi vám pomůžeme. Pro běžný pobyt je nejrychlejší online rezervace.
             </p>
             <p className="mt-4 text-base leading-7 text-stone-600">
-              Menší soukromé akce jsou možné po předchozí domluvě.
+              Pokud plánujete delší termín, firemní ubytování nebo máte speciální přání ohledně příjezdu, napište nám nebo zavolejte a vše spolu osobně doladíme.
+            </p>
+            <p className="mt-4 text-base leading-7 text-stone-600">
+              Hledáte prostor pro rodinnou oslavu nebo firemní setkání? Rádi pro vás připravíme zázemí na míru.
             </p>
           </div>
 
@@ -63,16 +65,16 @@ export function ContactSection() {
               <h3 className="text-xl font-semibold text-stone-900">Kontaktní údaje</h3>
               <div className="mt-7 space-y-5 text-[17px] leading-8 text-stone-600">
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Jeneweinova+134+49+Brno-Komarov"
+                  href="https://www.google.com/maps/search/?api=1&query=Jeneweinova+49+51+Brno-Komarov"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-start gap-4 rounded-2xl transition duration-200 hover:text-stone-900"
                 >
                   <AddressIcon />
                   <span>
-                    Jeneweinova 134/49
+                    Jeneweinova 49/51
                     <br />
-                    Brno-Komárov
+                    617 00 Brno-Komárov
                     <span className="mt-1 block text-sm text-stone-500 transition duration-200 group-hover:text-stone-700">
                       Otevřít v mapě
                     </span>
@@ -103,8 +105,8 @@ export function ContactSection() {
             >
               <h3 className="text-xl font-semibold">Rezervace</h3>
               <p className="mt-5 text-[17px] leading-8 text-stone-300">
-                Nejrychlejší cesta k volnému termínu je online rezervace. Pro delší nebo firemní
-                pobyty doporučujeme kontakt přímo.
+                Nejrychlejší cesta k volnému termínu je online rezervace. Pro delší pobyt nebo
+                pracovní cestu doporučujeme kontakt přímo.
               </p>
               <a
                 href="https://booking.previo.app/?id=019d0173-7772-7164-b6da-ed6b8dc36337&lang=cs&cur=CZK"
@@ -115,6 +117,10 @@ export function ContactSection() {
                 Rezervovat pobyt
               </a>
             </div>
+          </div>
+
+          <div className="rounded-[1.5rem] bg-[#faf7f2] px-6 py-5 text-[15px] leading-7 text-stone-700 shadow-[0_12px_30px_rgba(28,25,23,0.04)] ring-1 ring-stone-200/70">
+            Těšíme se na vaši návštěvu! Rezervaci zvládnete online během pár minut. Když si ale budete chtít cokoliv ověřit, neváhejte nám zavolat.
           </div>
         </div>
       </div>

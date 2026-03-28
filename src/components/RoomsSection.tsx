@@ -19,7 +19,7 @@ export function RoomsSection() {
           </h2>
           <p className="mt-5 text-lg leading-8 text-stone-600">
             U každého typu najdete cenu, kapacitu, vybavení a fotografie. Pokud si nejste jistí,
-            ozvěte se a doporučíme vhodnou variantu.
+            který pokoj bude pro vás ten pravý, zavolejte nám a rádi vám poradíme.
           </p>
         </div>
 
