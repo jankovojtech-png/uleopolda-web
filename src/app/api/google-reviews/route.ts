@@ -1,3 +1,6 @@
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 import { NextResponse } from "next/server";
 
 type GoogleReview = {
@@ -48,7 +51,7 @@ function selectTrustedReviews<T extends { rating?: number; text?: string }>(revi
     return (right.text ?? "").length - (left.text ?? "").length;
   });
 
-  return sorted.slice(0, MAX_REVIEWS);
+  return sorted;
 }
 
 async function fetchPlaceId(apiKey: string) {
@@ -125,10 +128,11 @@ function normalizeReviews(reviews: GoogleReview[] = []) {
     );
   });
 
-  // Shuffle the reviews randomly so they rotate
+  // Náhodně zamícháme všechny unikátní recenze (aby se při každém načtení ukazovaly jiné)
   const shuffled = [...deduped].sort(() => Math.random() - 0.5);
 
-  const selected = selectTrustedReviews(shuffled).map((review) => ({
+  // Vrátíme jich víc (např. 10), ať má frontend z čeho vybírat a rotovat
+  const selected = shuffled.slice(0, 10).map((review) => ({
     author: review.author,
     rating: review.rating,
     text: review.text,

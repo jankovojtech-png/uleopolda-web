@@ -13,10 +13,14 @@ export function PracticalInfoBlock() {
       {/* Jemné pozadí na celou šířku pro rozbití textového bloku */}
       <div className="absolute inset-0 -z-10">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.2]"
-          style={{ backgroundImage: "url('/images/17.jpg')" }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.4]"
+          style={{ 
+            backgroundImage: "url('/images/17.jpg')",
+            filter: "brightness(1.1) contrast(1.1)"
+          }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,#f6f1ea_0%,rgba(246,241,234,0.6)_20%,rgba(246,241,234,0.6)_80%,#f6f1ea_100%)]" />
+        <div className="absolute inset-0 bg-[#f6f1ea]/70" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#f6f1ea_0%,transparent_20%,transparent_80%,#f6f1ea_100%)]" />
       </div>
 
       <div className="mx-auto max-w-6xl px-6">
