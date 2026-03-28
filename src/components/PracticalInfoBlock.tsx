@@ -1,3 +1,5 @@
+import { LightboxImage } from "@/components/LightboxImage";
+
 const practicalItems = [
   "Příjezd je možný po předchozí domluvě i ve večerních hodinách – do objektu se dostanete pohodlně kartou.",
   "Snídaně podáváme formou bohatých švédských stolů v naší zimní zahradě nebo letním altánu.",
@@ -7,9 +9,18 @@ const practicalItems = [
 
 export function PracticalInfoBlock() {
   return (
-    <section className="py-20 sm:py-24">
+    <section className="relative py-20 sm:py-28">
+      {/* Jemné pozadí na celou šířku pro rozbití textového bloku */}
+      <div className="absolute inset-0 -z-10">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.12]"
+          style={{ backgroundImage: "url('/images/17.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#f6f1ea_0%,rgba(246,241,234,0.85)_20%,rgba(246,241,234,0.85)_80%,#f6f1ea_100%)]" />
+      </div>
+
       <div className="mx-auto max-w-6xl px-6">
-        <div className="rounded-[2rem] bg-[#f7f2eb] p-8 shadow-[0_24px_60px_rgba(28,25,23,0.06)] ring-1 ring-stone-200/70 lg:p-10">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-16">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-stone-500">
               Praktické informace
@@ -17,16 +28,19 @@ export function PracticalInfoBlock() {
             <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-4xl">
               Co je dobré vědět před příjezdem
             </h2>
+            <p className="mt-5 text-lg leading-8 text-stone-600">
+              Snažíme se, aby váš pobyt u nás byl co nejvíce bezstarostný. Zde je několik praktických informací, které vám usnadní plánování.
+            </p>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2">
             {practicalItems.map((item) => (
-              <p
+              <div
                 key={item}
-                className="rounded-[1.5rem] bg-[#fcfaf7] px-6 py-5 text-[15px] leading-7 text-stone-700 ring-1 ring-stone-200/70"
+                className="rounded-[1.5rem] bg-white/80 p-6 text-[15px] leading-7 text-stone-700 shadow-[0_8px_24px_rgba(28,25,23,0.04)] ring-1 ring-stone-200/60 backdrop-blur-md transition hover:bg-white"
               >
                 {item}
-              </p>
+              </div>
             ))}
           </div>
         </div>
