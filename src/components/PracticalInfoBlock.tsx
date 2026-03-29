@@ -1,9 +1,9 @@
 import { LightboxImage } from "@/components/LightboxImage";
 
 const practicalItems = [
-  "Příjezd je možný po předchozí domluvě i ve večerních hodinách – do objektu se dostanete pohodlně kartou.",
-  "Snídaně podáváme formou bohatých švédských stolů v naší zimní zahradě nebo letním altánu.",
-  "K dispozici je billiardová místnost pro večerní odpočinek a nabízíme i prostory pro menší rodinné či firemní akce.",
+  "Standardní čas příjezdu je od 15:00 do 20:00. Po předchozí domluvě je možný i pozdější příjezd – do objektu se dostanete pohodlně kartou.",
+  "Snídaně podáváme formou švédských stolů v naší zimní zahradě nebo letním altánu.",
+  "Po předchozí domluvě je možné využít billiardovou místnost nebo si pronajmout prostory pro menší rodinné či firemní akce.",
   "Parkování je možné na našich vyhrazených stáních nebo v přilehlých ulicích. Pro vyložení věcí lze zastavit přímo u vchodu.",
 ];
 
