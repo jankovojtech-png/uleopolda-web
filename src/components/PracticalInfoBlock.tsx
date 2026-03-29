@@ -1,10 +1,23 @@
+import Link from "next/link";
 import { LightboxImage } from "@/components/LightboxImage";
 
 const practicalItems = [
-  "Standardní čas příjezdu je od 15:00 do 20:00. Po předchozí domluvě je možný i pozdější příjezd – do objektu se dostanete pohodlně kartou.",
-  "Snídaně podáváme formou švédských stolů v naší zimní zahradě nebo letním altánu.",
-  "Po předchozí domluvě je možné využít billiardovou místnost nebo si pronajmout prostory pro menší rodinné či firemní akce.",
-  "Parkování je možné na našich vyhrazených stáních nebo v přilehlých ulicích. Pro vyložení věcí lze zastavit přímo u vchodu.",
+  {
+    text: "Standardní čas příjezdu je od 15:00 do 20:00. Po předchozí domluvě je možný i pozdější příjezd.",
+  },
+  {
+    text: "Snídaně podáváme formou švédských stolů v naší zimní zahradě nebo letním altánu.",
+  },
+  {
+    text: "Po předchozí domluvě je možné využít billiardovou místnost nebo si pronajmout prostory pro menší rodinné či firemní akce.",
+  },
+  {
+    text: "Parkování je možné na našich vyhrazených stáních nebo v přilehlých ulicích. Pro vyložení věcí lze zastavit přímo u vchodu.",
+    link: {
+      url: "/parkovani",
+      label: "Více o parkování →",
+    },
+  },
 ];
 
 export function PracticalInfoBlock() {
@@ -34,12 +47,20 @@ export function PracticalInfoBlock() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            {practicalItems.map((item) => (
+            {practicalItems.map((item, index) => (
               <div
-                key={item}
+                key={index}
                 className="rounded-[1.5rem] bg-white/80 p-6 text-[15px] leading-7 text-stone-700 shadow-[0_8px_24px_rgba(28,25,23,0.04)] ring-1 ring-stone-200/60 backdrop-blur-md transition hover:bg-white"
               >
-                {item}
+                <p>{item.text}</p>
+                {item.link && (
+                  <Link
+                    href={item.link.url}
+                    className="mt-3 inline-flex font-semibold text-stone-800 transition hover:text-stone-900"
+                  >
+                    {item.link.label}
+                  </Link>
+                )}
               </div>
             ))}
           </div>
