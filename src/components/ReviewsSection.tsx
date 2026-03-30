@@ -16,7 +16,6 @@ type ReviewsResponse = {
 
 const GOOGLE_MAPS_REVIEWS_URL =
   "https://www.google.com/maps/search/?api=1&query=Penzion+U+Leopolda+Brno+Komarov";
-const MAX_REVIEWS = 6;
 const VISIBLE_REVIEW_COUNT = 3;
 
 const fallbackData: ReviewsResponse = {
@@ -101,42 +100,6 @@ function trimReviewText(text: string, maxLength = 180) {
   const lastSpace = trimmed.lastIndexOf(" ");
 
   return `${(lastSpace > 120 ? trimmed.slice(0, lastSpace) : trimmed).trimEnd()}...`;
-}
-
-function sortReviews(reviews: Review[]) {
-  return [...reviews].sort((left, right) => {
-    if (right.rating !== left.rating) {
-      return right.rating - left.rating;
-    }
-
-    return left.text.length - right.text.length;
-  });
-}
-
-function normalizeReviews(reviews: Review[]) {
-  const normalized = reviews
-    .map((review) => ({
-      author: getDisplayAuthor(review.author),
-      rating: review.rating,
-      text: repairEncoding(review.text).trim(),
-    }))
-    .filter((review) => review.author && review.text && review.rating >= 4);
-
-  const deduped = normalized.filter((review, index, source) => {
-    return (
-      source.findIndex(
-        (candidate) =>
-          candidate.author === review.author &&
-          candidate.text === review.text &&
-          candidate.rating === review.rating,
-      ) === index
-    );
-  });
-
-  // Shuffle the reviews so they rotate on the frontend too (fallback data)
-  const shuffled = [...deduped].sort(() => Math.random() - 0.5);
-
-  return sortReviews(shuffled).slice(0, MAX_REVIEWS);
 }
 
 function renderStars(rating: number) {

@@ -24,7 +24,6 @@ type CachedReviews = {
 
 const CACHE_DURATION_MS = 24 * 60 * 60 * 1000;
 const PLACE_QUERY = "Penzion U Leopolda Brno Komarov";
-const MAX_REVIEWS = 6;
 
 let cache: CachedReviews | null = null;
 
@@ -38,20 +37,6 @@ function repairEncoding(value: string) {
   } catch {
     return value;
   }
-}
-
-function selectTrustedReviews<T extends { rating?: number; text?: string }>(reviews: T[]) {
-  const sorted = [...reviews].sort((left, right) => {
-    const ratingDifference = (right.rating ?? 0) - (left.rating ?? 0);
-
-    if (ratingDifference !== 0) {
-      return ratingDifference;
-    }
-
-    return (right.text ?? "").length - (left.text ?? "").length;
-  });
-
-  return sorted;
 }
 
 async function fetchPlaceId(apiKey: string) {

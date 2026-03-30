@@ -36,7 +36,7 @@ export default function ParkingPage() {
             <h2 className="text-2xl font-semibold text-stone-900">2. Naše vyhrazená stání</h2>
             <p className="mt-4 text-[17px] leading-8 text-stone-700">
               Přímo před penzionem máme k dispozici <strong>3 vyhrazená parkovací stání</strong> pro naše hosty. 
-              Tato místa jsou zdarma a fungují na principu "kdo dřív přijde". Pokud je zde volno, 
+              Tato místa jsou zdarma a fungují na principu &quot;kdo dřív přijde&quot;. Pokud je zde volno, 
               můžete zde svůj vůz bez obav nechat po celou dobu pobytu.
             </p>
           </section>
