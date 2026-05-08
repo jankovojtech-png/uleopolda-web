@@ -5,7 +5,7 @@ const benefits = [
     title: "Bohaté snídaně",
     description:
       "Začněte den skvělou snídaní formou švédských stolů. Vychutnat si ji můžete v naší zimní zahradě nebo letním altánu.",
-    image: "/images/40.jpg",
+    image: "/images/26.jpg",
     imagePosition: "center center",
   },
   {
