@@ -51,10 +51,10 @@ export function Hero() {
             Rodinný penzion v Brně
           </h1>
           <p className="mt-4 max-w-xl text-[15px] leading-6 text-stone-700 sm:mt-6 sm:text-lg sm:leading-8">
-            Komfortní a čisté pokoje s vlastní koupelnou, Wi-Fi a parkováním v klidné části Brna s výbornou dostupností do centra. Rádi vás osobně přivítáme a připravíme vám bohatou snídani.
+            Vítáme Vás v našem rodinném penzionu v klidné části Brna. Nabízíme ubytování ve dvoulůžkových a třílůžkových pokojích s vlastní koupelnou, internetem a parkováním u domu.
           </p>
           <p className="mt-3 max-w-xl text-[15px] leading-6 text-stone-600 sm:text-base sm:leading-7">
-            Ať už k nám jedete za prací, odpočinkem nebo hledáte místo pro rodinnou oslavu, postaráme se, abyste se u nás cítili jako doma.
+            Ať už přijíždíte za prací, na veletrh nebo si prohlédnout město, rádi vám připravíme chutnou snídani a postaráme se o váš klidný pobyt.
           </p>
           <p className="mt-4 text-base font-medium text-stone-800 sm:text-lg">Ceny od 1440 Kč / noc</p>
 

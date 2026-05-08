@@ -13,10 +13,10 @@ export function FamilyTrustBlock() {
               Vítejte u nás
             </h2>
             <p className="mt-5 text-[17px] leading-8 text-stone-700 sm:text-lg">
-              Penzion U Leopolda vedeme jako rodina. Zakládáme si na tom, abyste u nás našli nejen čistý a pohodlný pokoj, ale také přátelské prostředí, kde se budete cítit vítáni. Rádi vám osobně poradíme s výběrem pokoje, připravíme čerstvou snídani nebo pomůžeme s organizací vaší oslavy.
+              Penzion U Leopolda je rodinný podnik a zakládáme si na přátelském a osobním přístupu. Chceme, abyste u nás našli příjemné rodinné prostředí a cítili se tu dobře. Rádi Vám poradíme s výběrem pokoje, připravíme snídani přesně podle chuti nebo pomůžeme s organizací oslavy.
             </p>
             <p className="mt-4 text-[15px] leading-7 text-stone-600 sm:text-base">
-              Pokud máte jakékoliv speciální přání ohledně příjezdu nebo ubytování, stačí nám zavolat – vždy se snažíme vyjít vstříc.
+              Pokud máte k pobytu jakékoliv speciální přání nebo potřebujete domluvit jiný čas příjezdu, stačí nám zavolat – snažíme se vždy maximálně vyjít vstříc.
             </p>
           </div>
           

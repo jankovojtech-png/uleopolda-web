@@ -9,16 +9,16 @@ const benefits = [
     imagePosition: "center center",
   },
   {
-    title: "Klidná lokalita",
+    title: "Klid od ruchu města",
     description:
-      "U nás najdete klid od ruchu velkoměsta, ale do centra Brna nebo na dálnici se dostanete bez složitého zajíždění za pár minut.",
+      "Ačkoliv se nacházíme kousek od centra Brna, naleznete u nás klid od hluku velkoměsta s velmi dobrou dopravní dostupností.",
     image: "/images/31.jpg",
     imagePosition: "center center",
   },
   {
-    title: "Soukromí a pohodlí",
+    title: "Příjemné pokoje",
     description:
-      "Komfortně a čistě zařízené pokoje s vlastní koupelnou a rychlým Wi-Fi připojením pro váš klidný pobyt.",
+      "Všechny naše pokoje i apartmány mají vlastní sociální zařízení (koupelnu, WC), televizi a bezplatné připojení k internetu.",
     image: "/images/23.jpg",
     imagePosition: "center center",
   },
@@ -45,7 +45,7 @@ export function Benefits() {
             Co hosté oceňují nejvíc
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-7 text-stone-600 sm:mt-5 sm:text-lg sm:leading-8">
-            Pečlivě udržované ubytování s rodinnou atmosférou, kde se budete cítit dobře na pracovní cestě i rodinném výletě.
+            Příjemné rodinné ubytování v Brně-Komárově, kde děláme vše pro to, aby vám u nás na cestách nic nechybělo.
           </p>
         </div>
 

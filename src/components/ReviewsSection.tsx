@@ -176,10 +176,10 @@ export function ReviewsSection() {
             Recenze hostů
           </p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-stone-900 sm:text-5xl">
-            Co říkají hosté
+            Co o nás říkají hosté
           </h2>
           <p className="mt-5 text-lg leading-8 text-stone-600">
-            Největší radost nám dělá, když se u nás cítíte jako doma. Hosté nejčastěji chválí klidné prostředí, bohaté snídaně a náš osobní přístup.
+            Největší radost nám dělá, když se k nám rádi vracíte. Naši hosté často chválí klid na pokoji, dobré snídaně a také to, že se u nás dá bez problémů zaparkovat.
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-base font-semibold text-stone-700">
             <span className="flex text-[15px] text-[#cdae7a]">{renderStars(data.rating)}</span>

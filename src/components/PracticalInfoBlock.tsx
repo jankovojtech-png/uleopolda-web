@@ -41,7 +41,7 @@ export function PracticalInfoBlock() {
               Co je dobré vědět před příjezdem
             </h2>
             <p className="mt-5 text-lg leading-8 text-stone-600">
-              Snažíme se, aby váš pobyt u nás byl co nejvíce bezstarostný. Zde je několik praktických informací, které vám usnadní plánování.
+              Aby u nás proběhlo vše hladce a vy jste si mohli pobyt v klidu užít, sepsali jsme pro vás několik základních informací.
             </p>
           </div>
 

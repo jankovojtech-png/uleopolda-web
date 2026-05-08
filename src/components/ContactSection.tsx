@@ -50,13 +50,13 @@ export function ContactSection() {
               Jsme tu pro vás. Ozvěte se nám.
             </h2>
             <p className="mt-6 text-lg leading-8 text-stone-600">
-              Ať už si chcete rovnou rezervovat pokoj, nebo potřebujete poradit s výběrem, rádi vám pomůžeme. Pro běžný pobyt je nejrychlejší online rezervace.
+              Pro rychlou rezervaci termínu i pokoje doporučujeme využít náš online systém. Pokud se nás ale chcete na cokoliv zeptat, jsme tu pro Vás.
             </p>
             <p className="mt-4 text-base leading-7 text-stone-600">
-              Pokud plánujete delší termín, firemní ubytování nebo máte speciální přání ohledně příjezdu, napište nám nebo zavolejte a vše spolu osobně doladíme.
+              V případě zájmu o dlouhodobější ubytování pro firmy, nebo pro upřesnění času příjezdu, nám raději zavolejte a vše osobně probereme.
             </p>
             <p className="mt-4 text-base leading-7 text-stone-600">
-              Hledáte prostor pro rodinnou oslavu nebo firemní setkání? Rádi pro vás připravíme zázemí na míru.
+              Pokud u nás chystáte rodinnou oslavu nebo malou firemní akci, rádi Vám připravíme prostor na míru.
             </p>
           </div>
 
@@ -120,7 +120,7 @@ export function ContactSection() {
           </div>
 
           <div className="rounded-[1.5rem] bg-[#faf7f2] px-6 py-5 text-[15px] leading-7 text-stone-700 shadow-[0_12px_30px_rgba(28,25,23,0.04)] ring-1 ring-stone-200/70">
-            Těšíme se na vaši návštěvu! Rezervaci zvládnete online během pár minut. Když si ale budete chtít cokoliv ověřit, neváhejte nám zavolat.
+            Těšíme se na Vaši návštěvu! Online to zvládnete během pár minut. A pokud si chcete cokoliv ověřit osobně, prostě nám rovnou zavolejte.
           </div>
         </div>
       </div>

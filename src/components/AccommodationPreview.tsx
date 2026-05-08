@@ -3,12 +3,12 @@ import { LightboxImage } from "@/components/LightboxImage";
 const accommodationCards = [
   {
     title: "Pokoje a apartmány na pár nocí",
-    text: "Čisté a klidné ubytování pro krátký pobyt, víkend v Brně, návštěvu města i pohodlné přespání.",
+    text: "Ideální volba pro víkendové pobyty, výlety do Brna nebo jen pohodlné přespání na cestě. U nás si po cestě odpočinete a načerpáte sílu.",
     image: "/images/3.jpg",
   },
   {
-    title: "Ideální zázemí pro pracovní cestu",
-    text: "Po náročném dni oceníte klid, vlastní koupelnu, rychlé Wi-Fi, bezproblémové parkování a možnost bohaté snídaně.",
+    title: "Zázemí pro pracovní cestu",
+    text: "Ať už jedete na veletrh nebo na služební cestu, po celodenní práci oceníte klidný spánek, spolehlivé Wi-Fi připojení a bezproblémové parkování.",
     image: "/images/26.jpg",
   },
 ];
@@ -26,8 +26,7 @@ export function AccommodationPreview() {
               Ubytování pro krátký pobyt i víkend v Brně
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-stone-600 sm:mt-5 sm:text-lg sm:leading-8">
-              Rychlý přehled pro hosty, kteří hledají čistý pokoj nebo apartmán na pár nocí, víkend
-              i pracovní cestu.
+              Vyberte si pokoj, který Vám bude nejvíce vyhovovat. U nás najdete to správné zázemí pro krátký i delší pobyt v Brně.
             </p>
           </div>
           <a

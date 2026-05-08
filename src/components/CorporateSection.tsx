@@ -20,11 +20,10 @@ export function CorporateSection() {
             Zázemí pro firmy a pracovní cesty
           </h2>
           <p className="mt-6 text-lg leading-8 text-stone-600">
-            Ať už přijíždíte do Brna pracovně na pár nocí, nebo hledáte dlouhodobější ubytování pro své zaměstnance, rádi vám vyjdeme vstříc. Nabízíme klidné prostředí pro odpočinek po práci a flexibilní domluvu.
+            Ať už přijíždíte do Brna pracovně na pár nocí, nebo hledáte dlouhodobější ubytování pro své zaměstnance či montážní skupiny, určitě se spolu domluvíme. Snažíme se maximálně vyjít vstříc vašim potřebám.
           </p>
           <p className="mt-4 text-base leading-7 text-stone-600">
-            Zázemí vyhovuje hostům, kteří jsou přes den v terénu a večer se potřebují v klidu
-            vyspat, i menším týmům, které chtějí zůstat pohromadě.
+            Naše ubytování je dlouhodobě oblíbené mezi hosty na služebních cestách, kteří jsou přes den v terénu a večer potřebují klid a dobře se vyspat.
           </p>
           <ul className="mt-6 space-y-3 text-lg leading-8 text-stone-600">
             {corporateBenefits.map((benefit) => (
